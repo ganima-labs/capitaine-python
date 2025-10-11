@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  api:
+    build: ./app
+    ports:
+      - "8080:8080"
+    environment:
+      - EXECUTOR_URL=http://localhost:2000/api/v2/execute
+      - DB_PATH=/data/progress.db
+    volumes:
+      - progress:/data
+    # Dépendance à un service local Piston
+    depends_on:
+      - piston
+
+  # Service Piston pour l'exécution du code Python
+  piston:
+    image: utkashx/engineer-man-piston:latest
+    ports:
+      - "2000:2000"
+    volumes:
+      - piston_data:/piston
+
+volumes:
+  progress:
+  piston_data:

@@ -1,0 +1,55 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="forestGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3d1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a7c4e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sunlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background forest gradient -->
+  <rect width="800" height="600" fill="url(#forestGradient)"/>
+
+  <!-- Sunlight rays -->
+  <polygon points="100,50 200,450 300,50" fill="url(#sunlight)" opacity="0.6"/>
+  <polygon points="500,0 550,600 650,0" fill="url(#sunlight)" opacity="0.4"/>
+
+  <!-- Mountains in background -->
+  <polygon points="0,400 200,200 400,400" fill="#1a2f1a" opacity="0.8"/>
+  <polygon points="300,450 500,250 700,450" fill="#1a2f1a" opacity="0.7"/>
+  <polygon points="600,500 800,300 800,500" fill="#1a2f1a" opacity="0.6"/>
+
+  <!-- Forest silhouettes -->
+  <ellipse cx="100" cy="550" rx="80" ry="150" fill="#0d1f0d" opacity="0.9"/>
+  <ellipse cx="250" cy="560" rx="100" ry="140" fill="#0d1f0d" opacity="0.85"/>
+  <ellipse cx="450" cy="555" rx="90" ry="145" fill="#0d1f0d" opacity="0.88"/>
+  <ellipse cx="650" cy="565" rx="110" ry="135" fill="#0d1f0d" opacity="0.82"/>
+  <ellipse cx="750" cy="558" rx="75" ry="142" fill="#0d1f0d" opacity="0.9"/>
+
+  <!-- Magic sparks -->
+  <circle cx="150" cy="200" r="3" fill="#ffd700" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="150" r="2" fill="#90ee90" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="300" r="2.5" fill="#98fb98" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="400" r="2" fill="#adff2f" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="450" r="1.5" fill="#00ff00" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Path in the forest -->
+  <path d="M 400 600 Q 350 500 380 400 T 360 200"
+        stroke="#8b6914" stroke-width="8" fill="none" opacity="0.6"/>
+  <path d="M 400 600 Q 450 500 420 400 T 440 200"
+        stroke="#8b6914" stroke-width="8" fill="none" opacity="0.6"/>
+</svg>

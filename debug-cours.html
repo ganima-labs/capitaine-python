@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Capitaine Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .result {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #444;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug - Capitaine Python</h1>
+
+        <div class="test-section">
+            <h2>Tests de Base</h2>
+            <button onclick="testAPI()">Tester l'API</button>
+            <button onclick="testTranslations()">Tester les traductions</button>
+            <button onclick="testFullFlow()">Test complet</button>
+            <div id="results" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Application dans un iframe</h2>
+            <iframe src="http://localhost:8080/" title="Capitaine Python"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
+            results.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            results.scrollTop = results.scrollHeight;
+        }
+
+        async function testAPI() {
+            log('🔍 Test de l\'API...', 'info');
+
+            try {
+                const response = await fetch('http://localhost:8080/api/courses');
+                log(`Status: ${response.status}`, response.ok ? 'success' : 'error');
+
+                if (response.ok) {
+                    const courses = await response.json();
+                    log(`✅ ${courses.length} cours trouvés:`, 'success');
+                    courses.forEach((course, index) => {
+                        const title = typeof course.title === 'object' ? course.title.fr : course.title;
+                        log(`  ${index + 1}. ${course.id}: ${title}`, 'success');
+                    });
+                } else {
+                    log(`❌ Erreur HTTP: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Erreur réseau: ${error.message}`, 'error');
+            }
+        }
+
+        async function testTranslations() {
+            log('🌍 Test des traductions...', 'info');
+
+            try {
+                const response = await fetch('http://localhost:8080/static/i18n.json');
+                log(`Status traductions: ${response.status}`, response.ok ? 'success' : 'error');
+
+                if (response.ok) {
+                    const translations = await response.json();
+                    const languages = Object.keys(translations);
+                    log(`✅ Langues supportées: ${languages.join(', ')}`, 'success');
+
+                    // Tester quelques clés
+                    const testKeys = ['title', 'subtitle', 'courses.title'];
+                    testKeys.forEach(key => {
+                        const value = translations.fr[key.split('.')[0]]?.[key.split('.')[1]] || 'N/A';
+                        log(`  ${key}: ${value}`, 'success');
+                    });
+                }
+            } catch (error) {
+                log(`❌ Erreur traductions: ${error.message}`, 'error');
+            }
+        }
+
+        async function testFullFlow() {
+            log('🔄 Test complet du flux...', 'info');
+
+            // 1. Test API
+            await testAPI();
+
+            // 2. Test traductions
+            await testTranslations();
+
+            // 3. Test chargement d'exercices
+            try {
+                log('📚 Test chargement exercices...', 'info');
+                const exercisesResponse = await fetch('http://localhost:8080/api/courses/python-adventure/exercises');
+                if (exercisesResponse.ok) {
+                    const exercises = await exercisesResponse.json();
+                    log(`✅ ${exercises.length} exercices trouvés pour python-adventure`, 'success');
+
+                    if (exercises.length > 0) {
+                        const firstExercise = exercises[0];
+                        const title = typeof firstExercise.title === 'object' ? firstExercise.title.fr : firstExercise.title;
+                        log(`  Premier exercice: ${title}`, 'success');
+                    }
+                } else {
+                    log(`❌ Erreur exercices: ${exercisesResponse.status}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Erreur test exercices: ${error.message}`, 'error');
+            }
+
+            // 4. Test thème
+            try {
+                log('🎨 Test chargement thème...', 'info');
+                const themeResponse = await fetch('http://localhost:8080/api/courses/python-adventure/theme');
+                if (themeResponse.ok) {
+                    const theme = await themeResponse.json();
+                    log(`✅ Thème chargé: ${theme.theme_name || 'défaut'}`, 'success');
+                } else {
+                    log(`⚠️ Thème non trouvé (normal si pas de thème personnalisé)`, 'warning');
+                }
+            } catch (error) {
+                log(`❌ Erreur thème: ${error.message}`, 'error');
+            }
+
+            log('🎯 Test complet terminé !', 'success');
+        }
+
+        // Test automatique au chargement
+        window.onload = function() {
+            setTimeout(() => {
+                log('🚀 Démarrage des tests automatiques...', 'info');
+                testAPI();
+            }, 1000);
+        };
+    </script>
+</body>
+</html>

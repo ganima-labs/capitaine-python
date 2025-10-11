@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Debug</title>
+</head>
+<body>
+    <h1>Test de Debug</h1>
+    <div id="test-results"></div>
+
+    <script>
+        console.log("🧪 Page de test chargée");
+
+        // Test 1: Vérifier si fetch fonctionne
+        fetch('/api/courses')
+            .then(response => {
+                console.log("📡 Test fetch - Status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("✅ Test fetch - Données:", data);
+                document.getElementById('test-results').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                console.error("❌ Test fetch - Erreur:", error);
+                document.getElementById('test-results').innerHTML = '<div style="color: red;">Erreur: ' + error.message + '</div>';
+            });
+    </script>
+</body>
+</html>

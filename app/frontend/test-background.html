@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-background {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #333;
+            margin: 20px 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .test-1 {
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('/static/courses/images/forest-background.svg');
+        }
+        .test-2 {
+            background-image: url('/static/courses/images/forest-background.svg');
+        }
+        .test-3 {
+            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('/static/courses/images/forest-background.svg');
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test des images de fond</h1>
+
+    <div class="info">
+        <strong>Test 1:</strong> background-image avec gradient et URL
+    </div>
+    <div class="test-background test-1"></div>
+
+    <div class="info">
+        <strong>Test 2:</strong> background-image simple avec URL
+    </div>
+    <div class="test-background test-2"></div>
+
+    <div class="info">
+        <strong>Test 3:</strong> background avec gradient et URL (comme dans le code)
+    </div>
+    <div class="test-background test-3"></div>
+
+    <div class="info">
+        <strong>Vérification des images:</strong><br>
+        <img src="/static/courses/images/forest-background.svg" alt="Forest Background" width="100"><br>
+        <img src="/static/courses/images/forest-icon.svg" alt="Forest Icon" width="50">
+    </div>
+
+    <script>
+        // Test de chargement des images
+        function testImageLoad(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => reject(false);
+                img.src = url;
+            });
+        }
+
+        async function checkImages() {
+            const urls = [
+                '/static/courses/images/forest-background.svg',
+                '/static/courses/images/forest-icon.svg'
+            ];
+
+            for (const url of urls) {
+                try {
+                    await testImageLoad(url);
+                    console.log(`✅ ${url} - Chargée avec succès`);
+                } catch (error) {
+                    console.error(`❌ ${url} - Erreur de chargement`);
+                }
+            }
+        }
+
+        checkImages();
+    </script>
+</body>
+</html>

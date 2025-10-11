@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "id": "python-adventure",
+    "title": {
+      "fr": "Aventure Python",
+      "en": "Python Adventure",
+      "es": "Aventura Python",
+      "de": "Python Abenteuer"
+    },
+    "description": {
+      "fr": "Une mission épique pour maîtriser Python !",
+      "en": "An epic mission to master Python!",
+      "es": "¡Una misión épica para dominar Python!",
+      "de": "Eine epische Mission, um Python zu meistern!"
+    },
+    "level": "intermédiaire",
+    "estimated_hours": 12,
+    "author": "Capitaine Aventure",
+    "version": "1.0",
+    "icon": "/static/courses/images/forest-icon.svg",
+    "background_image": "/static/courses/images/forest-background.svg"
+  },
+  "theme": {
+    "name": "forest",
+    "primary_color": "#2d5016",
+    "secondary_color": "#5a7c2e",
+    "background_color": "#0d1f0d",
+    "surface_color": "#1a2e1a",
+    "text_color": "#e8f5e8",
+    "accent_color": "#76ff03",
+    "gradient_start": "#0d1f0d",
+    "gradient_end": "#1a2e1a",
+    "background_image": "/static/courses/images/forest-background.svg",
+    "font_family": "\"Segoe UI\", \"Roboto\", sans-serif"
+  },
+  "exercises": [
+    {
+      "id": "01-aventure-print",
+      "title": {
+        "fr": "Le Message du Héros",
+        "en": "The Hero's Message",
+        "es": "El Mensaje del Héroe",
+        "de": "Die Nachricht des Helden"
+      },
+      "stars": 1,
+      "lesson": {
+        "title": {
+          "fr": "📚 Leçon : La Fonction print()",
+          "en": "📚 Lesson: The print() Function",
+          "es": "📚 Lección: La Función print()",
+          "de": "📚 Lektion: Die print() Funktion"
+        },
+        "content": {
+          "fr": "La fonction `print()` est l\\'un des outils les plus fondamentaux en Python ! Elle permet d\\'afficher du texte à l\\'écran.\n\n**Syntaxe :**\n```python\nprint(\"Votre message ici\")\n```\n\n**Points clés :**\n- `print()` est une fonction intégrée (built-in)\n- Le message doit être entre guillemets `\"` ou apostrophes `'`\n- Python affichera exactement ce qui se trouve entre les guillemets\n- Chaque appel à `print()` crée une nouvelle ligne\n\n**Exemples :**\n```python\nprint(\"Bonjour le monde !\")\nprint('J\\'apprends Python')\nprint(\"42\")  # Affiche le nombre 42\n```\n\nPrêt à écrire ton premier message d\\'aventurier ?",
+          "en": "The `print()` function is one of the most fundamental tools in Python! It allows you to display text on the screen.\n\n**Syntax:**\n```python\nprint(\"Your message here\")\n```\n\n**Key points:**\n- `print()` is a built-in function\n- The message must be in quotes `\"` or apostrophes `'`\n- Python will display exactly what's between the quotes\n- Each call to `print()` creates a new line\n\n**Examples:**\n```python\nprint(\"Hello world!\")\nprint('I\\'m learning Python')\nprint(\"42\")  # Displays the number 42\n```\n\nReady to write your first adventure message?",
+          "es": "La función `print()` es una de las herramientas más fundamentales en Python! Permite mostrar texto en la pantalla.\n\n**Sintaxis:**\n```python\nprint(\"Tu mensaje aquí\")\n```\n\n**Puntos clave:**\n- `print()` es una función integrada (built-in)\n- El mensaje debe estar entre comillas `\"` o apóstrofes `'`\n- Python mostrará exactamente lo que está entre las comillas\n- Cada llamada a `print()` crea una nueva línea\n\n**Ejemplos:**\n```python\nprint(\"¡Hola mundo!\")\nprint('Estoy aprendiendo Python')\nprint(\"42\")  # Muestra el número 42\n```\n\n¿Listo para escribir tu primer mensaje de aventura?",
+          "de": "Die `print()` Funktion ist eines der grundlegendsten Werkzeuge in Python! Sie ermöglicht es, Text auf dem Bildschirm anzuzeigen.\n\n**Syntax:**\n```python\nprint(\"Deine Nachricht hier\")\n```\n\n**Wichtige Punkte:**\n- `print()` ist eine eingebaute Funktion\n- Die Nachricht muss in Anführungszeichen `\"` oder Apostrophe `'`\n- Python zeigt genau das an, was zwischen den Anführungszeichen steht\n- Jeder Aufruf von `print()` erstellt eine neue Zeile\n\n**Beispiele:**\n```python\nprint(\"Hallo Welt!\")\nprint('Ich lerne Python')\nprint(\"42\")  # Zeigt die Zahl 42 an\n```\n\nBereit, deine erste Abenteuernachricht zu schreiben?"
+        },
+        "duration": {
+          "fr": "3 minutes",
+          "en": "3 minutes",
+          "es": "3 minutos",
+          "de": "3 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Écris ton premier message d'aventurier : 'Aventure commence ici !'",
+        "en": "Write your first adventure message: 'Adventure begins here!'",
+        "es": "Escribe tu primer mensaje de aventura: '¡La aventura comienza aquí!'",
+        "de": "Schreibe deine erste Abenteuernachricht: 'Abenteuer beginnt hier!'"
+      },
+      "starter": "print(\"Aventure commence ici !\")",
+      "solution_explanation": {
+        "fr": "Dans cette quête, print() est ta baguette magique pour afficher des messages. Les guillemets contiennent le sortilège à prononcer !",
+        "en": "In this quest, print() is your magic wand to display messages. The quotes contain the spell to cast!",
+        "es": "En esta misión, print() es tu varita mágica para mostrar mensajes. ¡Las comillas contienen el hechizo lanzar!",
+        "de": "In dieser Quest ist print() dein magischer Stab, um Nachrichten anzuzeigen. Die Anführungszeichen enthalten den zu sprechenden Zauber!"
+      },
+      "tests": [
+        "out = run_with_input('')",
+        "assert out.strip() == 'Aventure commence ici !'"
+      ],
+      "hints": {
+        "fr": [
+          "Utilise la baguette print()",
+          "Les guillemets enferment le sort",
+          "Respecte chaque mot de l'incantation"
+        ],
+        "en": [
+          "Use the magic wand print()",
+          "Quotes contain the spell",
+          "Respect every word of the incantation"
+        ],
+        "es": [
+          "Usa la varita mágica print()",
+          "Las comillas contienen el hechizo",
+          "Respeta cada palabra del conjuro"
+        ],
+        "de": [
+          "Benutze den magischen Stab print()",
+          "Anführungszeichen enthalten den Zauber",
+          "Respektiere jedes Wort des Zauberspruchs"
+        ]
+      }
+    },
+    {
+      "id": "02-aventure-variable",
+      "title": {
+        "fr": "Le Sac à Dos Magique",
+        "en": "The Magic Backpack",
+        "es": "La Mochila Mágica",
+        "de": "Der magische Rucksack"
+      },
+      "stars": 1,
+      "lesson": {
+        "title": {
+          "fr": "📚 Leçon : Les Variables",
+          "en": "📚 Lesson: Variables",
+          "es": "📚 Lección: Variables",
+          "de": "📚 Lektion: Variablen"
+        },
+        "content": "Une variable en Python est comme un sac à dos magique où tu peux stocker des données pour les utiliser plus tard !\n\n**Syntaxe :**\n```python\nnom_variable = valeur\n```\n\n**Points clés :**\n- Le nom de la variable suit tes règles : lettres, chiffres, underscore `_`\n- Le signe `=` signifie \"assigne la valeur à la variable\"\n- Une variable peut contenir du texte (chaîne), des nombres, etc.\n- Tu peux réutiliser une variable autant de fois que tu veux\n\n**Types de données :**\n```python\n# Texte (chaîne de caractères)\nnom = \"Alice\"\npotion = 'Potion de vie'\n\n# Nombres\npoints_vie = 100\nniveau = 5\n\n# Booléens (vrai/faux)\nvivant = True\n```\n\n**Utilisation :**\n```python\ninventaire = \"Épée magique\"\nprint(inventaire)  # Affiche : Épée magique\nprint(f\"Mon objet : {inventaire}\")  # Affiche : Mon objet : Épée magique\n```\n\nPrêt à remplir ton sac à dos magique ?",
+        "duration": "5 minutes"
+      },
+      "prompt": {
+        "fr": "Stocke 'Potion de vie' dans un sac (variable) nommé inventaire et affiche son contenu.",
+        "en": "Store 'Life Potion' in a bag (variable) named inventory and display its contents.",
+        "es": "Almacena 'Poción de vida' en una bolsa (variable) llamada inventario y muestra su contenido.",
+        "de": "Speichere 'Lebenstrank' in einer Tasche (Variable) namens inventar und zeige ihren Inhalt an."
+      },
+      "starter": "inventaire = \"Potion de vie\"\nprint(inventaire)",
+      "solution_explanation": "Une variable est comme un sac à dos magique qui peut contenir un objet. Ici, tu y places une 'Potion de vie' !",
+      "tests": [
+        "out = run_with_input('')",
+        "assert 'Potion de vie' in out"
+      ],
+      "hints": {
+        "fr": [
+          "inventaire = 'Potion de vie'",
+          "print(inventaire) montre ce que contient ton sac"
+        ],
+        "en": [
+          "inventory = 'Life Potion'",
+          "print(inventory) shows what's in your bag"
+        ],
+        "es": [
+          "inventario = 'Poción de vida'",
+          "print(inventario) muestra lo que contiene tu bolsa"
+        ],
+        "de": [
+          "inventar = 'Lebenstrank'",
+          "print(inventar) zeigt, was in deiner Tasche ist"
+        ]
+      }
+    },
+    {
+      "id": "03-aventure-conditions",
+      "title": {
+        "fr": "Le Choix du Chemin",
+        "en": "The Path Choice",
+        "es": "La Elección del Camino",
+        "de": "Der Wegewahl"
+      },
+      "stars": 2,
+      "lesson": {
+        "title": {
+          "fr": "📚 Leçon : Les Conditions (if/elif/else)",
+          "en": "📚 Lesson: Conditions (if/elif/else)",
+          "es": "📚 Lección: Condiciones (if/elif/else)",
+          "de": "📚 Lektion: Bedingungen (if/elif/else)"
+        },
+        "content": "Les conditions en Python sont comme des carrefours dans ton aventure ! Elles permettent à ton programme de prendre des décisions.\n\n**Syntaxe de base :**\n```python\nif condition:\n    # Code si la condition est vraie\nelif autre_condition:\n    # Code si l'autre condition est vraie\nelse:\n    # Code si aucune condition n'est vraie\n```\n\n**Points clés :**\n- `if` : première condition à tester\n- `elif` : condition alternative (sinon si)\n- `else` : action par défaut (sinon)\n- L'indentation (espace en début de ligne) est OBLIGATOIRE en Python\n- Les conditions se terminent par deux-points `:`\n\n**Opérateurs de comparaison :**\n```python\n==  # Égal à\n!=  # Différent de\n>   # Plus grand que\n<   # Plus petit que\n>=  # Plus grand ou égal à\n<=  # Plus petit ou égal à\n```\n\n**Exemple d'aventure :**\n```python\nchoix = input(\"Où veux-tu aller ? (foret/montagne): \")\nif choix == \"foret\":\n    print(\"Tu explores la forêt mystérieuse\")\nelif choix == \"montagne\":\n    print(\"Tu gravis la montagne périlleuse\")\nelse:\n    print(\"Choix invalide !\")\n```\n\nPrêt à guider ton aventurier ?",
+        "duration": "7 minutes"
+      },
+      "prompt": {
+        "fr": "Demande à l'aventurier son choix (foret/montagne) et affiche 'Tu explores la forêt' ou 'Tu gravis la montagne'.",
+        "en": "Ask the adventurer for their choice (forest/mountain) and display 'You explore the forest' or 'You climb the mountain'.",
+        "es": "Pregunta al aventurero su elección (bosque/montaña) y muestra 'Exploras el bosque' o 'Escalas la montaña'.",
+        "de": "Frage den Abenteurer nach seiner Wahl (Wald/Berg) und zeige 'Du erforschst den Wald' oder 'Du besteigst den Berg' an."
+      },
+      "starter": "choix = input()\nif choix == \"foret\":\n    print(\"Tu explores la forêt\")\nelif choix == \"montagne\":\n    print(\"Tu gravis la montagne\")",
+      "solution_explanation": "Chaque choix dans une aventure mène à un chemin différent. if/elif sont les carrefours de ton voyage !",
+      "tests": [
+        "out1 = run_with_input('foret\\n')",
+        "out2 = run_with_input('montagne\\n')",
+        "assert 'explores la forêt' in out1.lower()",
+        "assert 'gravis la montagne' in out2.lower()"
+      ],
+      "hints": {
+        "fr": [
+          "if choix == 'foret':",
+          "elif choix == 'montagne':"
+        ],
+        "en": [
+          "if choice == 'forest':",
+          "elif choice == 'mountain':"
+        ],
+        "es": [
+          "if eleccion == 'bosque':",
+          "elif eleccion == 'montaña':"
+        ],
+        "de": [
+          "if wahl == 'wald':",
+          "elif wahl == 'berg':"
+        ]
+      }
+    },
+    {
+      "id": "04-aventure-boucle",
+      "title": {
+        "fr": "Les Pas du Voyageur",
+        "en": "The Traveler's Steps",
+        "es": "Los Pasos del Viajero",
+        "de": "Die Schritte des Reisenden"
+      },
+      "stars": 1,
+      "lesson": {
+        "title": {
+          "fr": "📚 Leçon : Les Boucles (for)",
+          "en": "📚 Lesson: Loops (for)",
+          "es": "📚 Lección: Bucles (for)",
+          "de": "📚 Lektion: Schleifen (for)"
+        },
+        "content": "Les boucles en Python sont comme des pas répétitifs dans un voyage ! Elles permettent d'exécuter du code plusieurs fois sans tout réécrire.\n\n**Syntaxe de la boucle for :**\n```python\nfor variable in range(debut, fin):\n    # Code à répéter\n```\n\n**Points clés :**\n- `range(debut, fin)` génère des nombres de `debut` à `fin-1`\n- La variable prend chaque valeur à chaque tour de boucle\n- L'indentation est obligatoire pour le code dans la boucle\n- `range(n)` va de 0 à n-1\n- `range(a, b)` va de a à b-1\n\n**Exemples de voyage :**\n```python\n# Compter les pas de 1 à 3\nfor pas in range(1, 4):\n    print(f\"Pas {pas}\")\n\n# Affiche : Pas 1, Pas 2, Pas 3\n\n# Explorer 5 lieux\nfor lieu in range(5):\n    print(f\"Lieu numéro {lieu + 1}\")\n\n# Parcourir une liste\nequipement = [\"épée\", \"bouclier\", \"potion\"]\nfor item in equipement:\n    print(f\"Équipement : {item}\")\n```\n\n**Boucles avec f-strings :**\n```python\nfor i in range(3):\n    print(f\"Tour {i+1}: En route pour l'aventure !\")\n```\n\nPrêt à marcher pas par pas vers ton aventure ?",
+        "duration": "6 minutes"
+      },
+      "prompt": {
+        "fr": "Compte tes pas de 1 à 3 comme si tu marchais vers l'aventure.",
+        "en": "Count your steps from 1 to 3 as if you were walking towards adventure.",
+        "es": "Cuenta tus pasos de 1 a 3 como si caminaras hacia la aventura.",
+        "de": "Zähle deine Schritte von 1 bis 3, als ob du zum Abenteuer gehst."
+      },
+      "starter": "for pas in range(1, 4):\n    print(f\"Pas {pas}\")",
+      "solution_explanation": "Une boucle for est comme marcher pas par pas. Chaque itération est un nouveau pas dans ton voyage !",
+      "tests": [
+        "out = run_with_input('')",
+        "lines = out.strip().splitlines()",
+        "assert len(lines) == 3",
+        "assert 'Pas 1' in lines[0],",
+        "assert 'Pas 3' in lines[2]"
+      ],
+      "hints": {
+        "fr": [
+          "for pas in range(1, 4):",
+          "print(f\"Pas {pas}\")"
+        ],
+        "en": [
+          "for step in range(1, 4):",
+          "print(f\"Step {step}\")"
+        ],
+        "es": [
+          "for paso in range(1, 4):",
+          "print(f\"Paso {paso}\")"
+        ],
+        "de": [
+          "for schritt in range(1, 4):",
+          "print(f\"Schritt {schritt}\")"
+        ]
+      }
+    },
+    {
+      "id": "05-aventure-fonction",
+      "title": {
+        "fr": "L'Arme du Héros",
+        "en": "The Hero's Weapon",
+        "es": "El Arma del Héroe",
+        "de": "Die Waffe des Helden"
+      },
+      "stars": 2,
+      "lesson": {
+        "title": {
+          "fr": "📚 Leçon : Les Fonctions",
+          "en": "📚 Lesson: Functions",
+          "es": "📚 Lección: Funciones",
+          "de": "📚 Lektion: Funktionen"
+        },
+        "content": "Les fonctions en Python sont comme des techniques de combat que tu peux réutiliser ! Elles regroupent du code pour l'exécuter quand tu veux.\n\n**Syntaxe :**\n```python\ndef nom_fonction(parametre1, parametre2):\n    # Code de la fonction\n    return resultat  # Optionnel\n```\n\n**Points clés :**\n- `def` : mot-clé pour définir une fonction\n- Les parenthèses `()` contiennent les paramètres (peuvent être vides)\n- Les deux-points `:` marquent le début du code de la fonction\n- `return` : renvoie une valeur (optionnel)\n- L'indentation est obligatoire\n- Une fonction peut avoir 0, 1 ou plusieurs paramètres\n\n**Exemples d'armes magiques :**\n```python\n# Fonction sans paramètre\ndef cri_guerrier():\n    return \"Pour la victoire !\"\n\n# Fonction avec un paramètre\ndef presentation(nom):\n    return f\"Je suis {nom}, héros de Python !\"\n\n# Fonction avec plusieurs paramètres\ndef combat(attaquant, defenseur, degats):\n    return f\"{attaquant} attaque {defenseur} pour {degats} dégâts !\"\n\n# Utilisation :\nmessage = presentation(\"Aragorn\")\nprint(message)  # Affiche : Je suis Aragorn, héros de Python !\n```\n\n**Différence entre print() et return :**\n```python\ndef affiche_attaque(nom):\n    print(f\"{nom} attaque !\")  # Affiche directement\n\ndef prepare_attaque(nom):\n    return f\"{nom} prépare son attaque !\"  # Renvoie le texte\n```\n\nPrêt à forger ton arme magique ?",
+        "duration": "8 minutes"
+      },
+      "prompt": {
+        "fr": "Crée une fonction attaque(nom) qui renvoie '[nom] lance une attaque !' (sans l'afficher).",
+        "en": "Create a function attack(name) that returns '[name] launches an attack!' (without displaying it).",
+        "es": "Crea una función ataque(nombre) que devuelve '[nombre] lanza un ataque!' (sin mostrarlo).",
+        "de": "Erstelle eine Funktion angriff(name), die '[name] startet einen Angriff!' zurückgibt (ohne ihn anzuzeigen)."
+      },
+      "starter": "def attaque(nom):\n    return f\"{nom} lance une attaque !\"",
+      "solution_explanation": "Une fonction est une technique de combat que tu peux réutiliser. Elle attend un nom et renvoie le message d'attaque !",
+      "tests": [
+        "assert ns.get('attaque'), 'La fonction attaque doit exister'",
+        "assert ns['attaque']('Guerrier') == 'Guerrier lance une attaque !'",
+        "assert ns['attaque']('Magicien') == 'Magicien lance une attaque !'"
+      ],
+      "hints": {
+        "fr": [
+          "def attaque(nom):",
+          "return f\"{nom} lance une attaque !\""
+        ],
+        "en": [
+          "def attack(name):",
+          "return f\"{name} launches an attack!\""
+        ],
+        "es": [
+          "def ataque(nombre):",
+          "return f\"{nombre} lanza un ataque!\""
+        ],
+        "de": [
+          "def angriff(name):",
+          "return f\"{name} startet einen Angriff!\""
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "fr": {
+    "title": "Capitaine Python",
+    "subtitle": "Entraîneur de Héros",
+    "courses": {
+      "title": "Cours Disponibles",
+      "exercises": "Exercices"
+    },
+    "exercise": {
+      "select": "Choisis un exercice",
+      "code_editor": "Code Python",
+      "placeholder": "Écris ton code ici...",
+      "run": "Exécuter",
+      "validate": "Valider",
+      "solution": "Solution",
+      "output": "Sortie",
+      "hints": "Indices / Résultats",
+      "explanations": "Explications",
+      "progress": "Progression"
+    },
+    "lesson": {
+      "lesson": "Leçon"
+    },
+    "status": {
+      "local": "Local"
+    },
+    "messages": {
+      "choose_exercise": "Choisis d'abord un exercice !",
+      "success": "🎉 Réussi !",
+      "try_again": "Essaie encore !",
+      "start_adventure": "🎯 Commence ton aventure !",
+      "congratulations_title": "Félicitations ! Cours Terminé !",
+      "congratulations_message": "Tu as terminé tous les exercices de ce cours avec succès !",
+      "course_completed": "Cours complété avec succès !",
+      "ready_next_challenge": "Prêt pour un nouveau défi ?"
+    }
+  },
+  "en": {
+    "title": "Captain Python",
+    "subtitle": "Hero Trainer",
+    "courses": {
+      "title": "Available Courses",
+      "exercises": "Exercises"
+    },
+    "exercise": {
+      "select": "Choose an exercise",
+      "code_editor": "Python Code",
+      "placeholder": "Write your code here...",
+      "run": "Run",
+      "validate": "Validate",
+      "solution": "Solution",
+      "output": "Output",
+      "hints": "Hints / Results",
+      "explanations": "Explanations",
+      "progress": "Progress"
+    },
+    "lesson": {
+      "lesson": "Lesson"
+    },
+    "status": {
+      "local": "Local"
+    },
+    "messages": {
+      "choose_exercise": "Choose an exercise first!",
+      "success": "🎉 Success!",
+      "try_again": "Try again!",
+      "start_adventure": "🎯 Start your adventure!",
+      "congratulations_title": "Congratulations! Course Completed!",
+      "congratulations_message": "You have successfully completed all exercises in this course!",
+      "course_completed": "Course completed successfully!",
+      "ready_next_challenge": "Ready for a new challenge?"
+    }
+  },
+  "es": {
+    "title": "Capitán Python",
+    "subtitle": "Entrenador de Héroes",
+    "courses": {
+      "title": "Cursos Disponibles",
+      "exercises": "Ejercicios"
+    },
+    "exercise": {
+      "select": "Elige un ejercicio",
+      "code_editor": "Código Python",
+      "placeholder": "Escribe tu código aquí...",
+      "run": "Ejecutar",
+      "validate": "Validar",
+      "solution": "Solución",
+      "output": "Salida",
+      "hints": "Pistas / Resultados",
+      "explanations": "Explicaciones",
+      "progress": "Progreso"
+    },
+    "lesson": {
+      "lesson": "Lección"
+    },
+    "status": {
+      "local": "Local"
+    },
+    "messages": {
+      "choose_exercise": "¡Elige un ejercicio primero!",
+      "success": "🎉 ¡Éxito!",
+      "try_again": "¡Intenta de nuevo!",
+      "start_adventure": "🎯 ¡Comienza tu aventura!",
+      "congratulations_title": "¡Felicidades! ¡Curso Completado!",
+      "congratulations_message": "¡Has completado con éxito todos los ejercicios de este curso!",
+      "course_completed": "¡Curso completado con éxito!",
+      "ready_next_challenge": "¿Listo para un nuevo desafío?"
+    }
+  },
+  "de": {
+    "title": "Kapitän Python",
+    "subtitle": "Heldentrainer",
+    "courses": {
+      "title": "Verfügbare Kurse",
+      "exercises": "Übungen"
+    },
+    "exercise": {
+      "select": "Wähle eine Übung",
+      "code_editor": "Python Code",
+      "placeholder": "Schreibe deinen Code hier...",
+      "run": "Ausführen",
+      "validate": "Validieren",
+      "solution": "Lösung",
+      "output": "Ausgabe",
+      "hints": "Hinweise / Ergebnisse",
+      "explanations": "Erklärungen",
+      "progress": "Fortschritt"
+    },
+    "lesson": {
+      "lesson": "Lektion"
+    },
+    "status": {
+      "local": "Lokal"
+    },
+    "messages": {
+      "choose_exercise": "Wähle zuerst eine Übung!",
+      "success": "🎉 Erfolg!",
+      "try_again": "Versuche es erneut!",
+      "start_adventure": "🎯 Beginne dein Abenteuer!",
+      "congratulations_title": "Herzlichen Glückwunsch! Kurs Abgeschlossen!",
+      "congratulations_message": "Du hast erfolgreich alle Übungen dieses Kurses abgeschlossen!",
+      "course_completed": "Kurs erfolgreich abgeschlossen!",
+      "ready_next_challenge": "Bereit für eine neue Herausforderung?"
+    }
+  }
+}

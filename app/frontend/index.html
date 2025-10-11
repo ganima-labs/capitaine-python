@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Capitaine Python 🐍🚀</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configuration Tailwind avec thèmes personnalisés
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            'mono': ['Fira Code', 'Monaco', 'monospace'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.3s ease-out',
+          }
+        }
+      }
+    }
+  </script>
+  <style id="theme-styles">
+    /* Les styles personnalisés seront injectés par JavaScript */
+
+    /* Scrollbars personnalisées */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(31, 41, 55, 0.5);
+      border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--theme-primary, #4b5563);
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: var(--theme-secondary, #6b7280);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-corner {
+      background: rgba(31, 41, 55, 0.3);
+    }
+
+    /* Scrollbar pour Firefox */
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: var(--theme-primary, #4b5563) rgba(31, 41, 55, 0.5);
+    }
+
+    /* Animation de fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .animate-slide-up {
+      animation: slideUp 0.3s ease-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-900 to-purple-900 shadow-2xl border-b border-gray-700">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+          <span class="text-3xl">👨‍✈️</span>
+          <span>Capitaine Python</span>
+          <span class="text-sm md:text-base text-blue-300">Entraîneur de Héros</span>
+        </h1>
+        <div class="hidden md:flex items-center gap-4 text-sm">
+          <!-- Language Selector -->
+          <div class="relative">
+            <select id="language-selector" class="bg-blue-800 text-blue-200 px-3 py-1 rounded-full border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer">
+              <option value="fr">🇫🇷 FR</option>
+              <option value="en">🇬🇧 EN</option>
+              <option value="es">🇪🇸 ES</option>
+              <option value="de">🇩🇪 DE</option>
+            </select>
+          </div>
+          <span class="px-3 py-1 bg-blue-800 rounded-full text-blue-200">Local</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-6">
+    <!-- Courses Section (Horizontal) -->
+    <section class="mb-6">
+      <div class="bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-700">
+        <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <span>🎓</span>
+          <span>Cours Disponibles</span>
+        </h2>
+
+        <div id="course-list-wrapper" class="overflow-x-auto custom-scrollbar">
+          <div id="course-list" class="flex gap-4 pb-2" style="min-width: max-content;">
+            <!-- Course cards will be inserted here horizontally -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Grid (Exercises Left, Exercise Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-200px)]">
+
+      <!-- Exercises Section (Full Height Left) -->
+      <section class="lg:col-span-1">
+        <div id="exercises-container" class="bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-700 h-full flex flex-col hidden">
+          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <span>🎯</span>
+            <span>Exercices</span>
+          </h3>
+
+          <div id="ex-list-wrapper" class="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+            <div id="ex-list" class="space-y-2">
+              <!-- Exercise links will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exercise Section (Main Content) -->
+      <section class="lg:col-span-2">
+        <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 h-full overflow-y-auto custom-scrollbar">
+
+          <!-- Exercise Header -->
+          <div class="mb-6 pb-4 border-b border-gray-700">
+            <h2 id="ex-title" class="text-xl font-bold text-white mb-2">
+              Choisis un exercice
+            </h2>
+            <div id="ex-stars" class="flex gap-1 mb-3">
+              <!-- Stars will be inserted here -->
+            </div>
+            <p id="ex-prompt" class="text-gray-300 text-lg">
+              <!-- Exercise prompt will be inserted here -->
+            </p>
+          </div>
+
+          <!-- Lesson Section -->
+          <div id="lesson-section" class="mb-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-4 border border-blue-700/50 hidden">
+            <div class="flex items-center justify-between mb-3 cursor-pointer hover:text-blue-200 transition-colors" id="lesson-toggle">
+              <h3 id="lesson-title" class="text-lg font-semibold text-blue-300 flex items-center gap-2">
+                <span>📚</span>
+                <span>Leçon</span>
+                <span id="lesson-toggle-icon" class="ml-2 text-sm transition-transform duration-200">▼</span>
+              </h3>
+              <span id="lesson-duration" class="text-xs px-2 py-1 bg-blue-800/50 text-blue-200 rounded-full">
+                <!-- Duration will be inserted here -->
+              </span>
+            </div>
+            <div id="lesson-content" class="prose prose-invert max-w-none text-sm text-gray-300 transition-all duration-300">
+              <!-- Lesson content will be inserted here -->
+            </div>
+          </div>
+
+          <!-- Code Editor -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-400 mb-2">
+              Code Python
+            </label>
+            <textarea
+              id="editor"
+              spellcheck="false"
+              class="w-full h-64 px-4 py-3 bg-gray-900 text-gray-100 border border-gray-700 rounded-lg font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="Écris ton code ici..."
+            ></textarea>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-3 mb-6">
+            <button id="runBtn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 font-medium">
+              <span>▶️</span>
+              <span>Exécuter</span>
+            </button>
+            <button id="gradeBtn" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 font-medium">
+              <span>✅</span>
+              <span>Valider</span>
+            </button>
+            <button id="solutionBtn" class="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors duration-200 flex items-center gap-2 font-medium">
+              <span>💡</span>
+              <span>Solution</span>
+            </button>
+          </div>
+
+          <!-- Results Section -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+              <h3 class="text-sm font-semibold text-gray-400 mb-2 flex items-center gap-2">
+                <span>🖥</span>
+                <span>Sortie</span>
+              </h3>
+              <pre id="output" class="text-xs font-mono text-gray-300 whitespace-pre-wrap min-h-[100px]">—</pre>
+            </div>
+
+            <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+              <h3 class="text-sm font-semibold text-gray-400 mb-2 flex items-center gap-2">
+                <span>🧭</span>
+                <span>Indices / Résultats</span>
+              </h3>
+              <pre id="hint" class="text-xs text-gray-300 whitespace-pre-wrap min-h-[100px]">—</pre>
+            </div>
+          </div>
+
+          <!-- Explanation Section -->
+          <div id="explanation" class="mt-4 bg-blue-900/20 rounded-lg p-4 border border-blue-700/50 hidden">
+            <h3 class="text-sm font-semibold text-blue-300 mb-2 flex items-center gap-2">
+              <span>💡</span>
+              <span>Explications</span>
+            </h3>
+            <pre id="explanation-content" class="text-xs text-blue-200 whitespace-pre-wrap">—</pre>
+          </div>
+
+          <!-- Progress Section -->
+          <div class="mt-4 bg-gray-900 rounded-lg p-4 border border-gray-700">
+            <h3 class="text-sm font-semibold text-gray-400 mb-2 flex items-center gap-2">
+              <span>⭐</span>
+              <span>Progression</span>
+            </h3>
+            <pre id="progress" class="text-xs font-mono text-gray-300">—</pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

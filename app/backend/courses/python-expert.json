@@ -1,0 +1,699 @@
+{
+  "theme": {
+    "name": "expert",
+    "primary_color": "#6366f1",
+    "secondary_color": "#8b5cf6",
+    "background_color": "#0f0f23",
+    "surface_color": "#1e1e3f",
+    "text_color": "#e2e8f0",
+    "accent_color": "#f59e0b",
+    "gradient_start": "#0f0f23",
+    "gradient_end": "#1e1e3f",
+    "background_image": "placeholder_background_base64",
+    "font_family": "\"JetBrains Mono\", \"Fira Code\", monospace"
+  },
+  "exercises": [
+    {
+      "id": "00-expert-intro",
+      "title": {
+        "fr": "Bienvenue dans l'Arène des Experts - Introduction",
+        "en": "Welcome to the Expert Arena - Introduction",
+        "es": "Bienvenido a la Arena de Expertos - Introducción",
+        "de": "Willkommen in der Experten-Arena - Einführung"
+      },
+      "stars": 1,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Préparation au Voyage vers l'Expertise",
+          "en": "Lesson: Preparing for the Journey to Expertise",
+          "es": "Lección: Preparación del Viaje hacia la Expertise",
+          "de": "Lektion: Vorbereitung auf die Reise zur Expertise"
+        },
+        "content": {
+          "fr": "Bienvenue, futur maître du code Python ! Cette aventure t'embarquera dans les concepts les plus puissants de la programmation.\n\n**Ce voyage inclut :**\n- **Les Décorateurs** : Ajoute des pouvoirs magiques à tes fonctions\n- **Classes Avancées** : Crée des architectures logicielles robustes\n- **Générateurs** : Maîtrise le flux infini des données\n- **Context Managers** : Gère les ressources comme un pro\n- **Métaprogrammation** : Écris du code qui écrit du code !\n\n**Prérequis recommandés :**\n- Maîtrise des bases de Python (variables, boucles, fonctions)\n- Confortable avec la programmation orientée objet de base\n- Envie d'apprendre et de relever des défis !\n\n**Ce que tu maîtriseras à la fin :**\n- Créer des décorateurs personnalisés\n- Concevoir des architectures avec héritage complexe\n- Optimiser la mémoire avec les générateurs\n- Gérer automatiquement les ressources\n- Comprendre les mécanismes internes de Python\n\nPrêt à commencer ce voyage épique vers la maîtrise absolue de Python ?",
+          "en": "Welcome, future Python code master! This adventure will take you through the most powerful concepts in programming.\n\n**This journey includes:**\n- **Decorators**: Add magical powers to your functions\n- **Advanced Classes**: Create robust software architectures\n- **Generators**: Master the infinite flow of data\n- **Context Managers**: Manage resources like a pro\n- **Metaprogramming**: Write code that writes code!\n\n**Recommended prerequisites:**\n- Master Python basics (variables, loops, functions)\n- Comfortable with basic object-oriented programming\n- Eagerness to learn and take on challenges!\n\n**What you'll master by the end:**\n- Create custom decorators\n- Design architectures with complex inheritance\n- Optimize memory with generators\n- Automatically manage resources\n- Understand Python's internal mechanisms\n\nReady to start this epic journey to absolute Python mastery?",
+          "es": "¡Bienvenido, futuro maestro del código Python! Esta aventura te llevará a través de los conceptos más poderosos de la programación.\n\n**Este viaje incluye:**\n- **Decoradores**: Agrega poderes mágicos a tus funciones\n- **Clases Avanzadas**: Crea arquitecturas de software robustas\n- **Generadores**: Domina el flujo infinito de datos\n- **Context Managers**: Gestiona recursos como un profesional\n- **Metaprogramación**: Escribe código que escribe código\n\n**Prerrequisitos recomendados:**\n- Dominio de los basics de Python (variables, bucles, funciones)\n- Comodidad con programación orientada a objetos básica\n- ¡Ganas de aprender y aceptar desafíos!\n\n**Lo que dominarás al final:**\n- Crear decoradores personalizados\n- Diseñar arquitecturas con herencia compleja\n- Optimizar memoria con generadores\n- Gestionar recursos automáticamente\n- Entender los mecanismos internos de Python\n\n¿Listo para comenzar este viaje épico hacia el dominio absoluto de Python?",
+          "de": "Willkommen, zukünftiger Python-Code-Meister! Dieses Abenteuer führt dich durch die mächtigsten Konzepte der Programmierung.\n\n**Diese Reise beinhaltet:**\n- **Dekoratoren**: Füge magische Kräfte deinen Funktionen hinzu\n- **Fortgeschrittene Klassen**: Erstelle robuste Softwarearchitekturen\n- **Generatoren**: Meistere den unendlichen Datenfluss\n- **Kontextmanager**: Verwalte Ressourcen wie ein Profi\n- **Metaprogrammierung**: Schreibe Code, der Code schreibt\n\n**Empfohlene Voraussetzungen:**\n- Python-Grundlagen meistern (Variablen, Schleifen, Funktionen)\n- Komfort mit grundlegender objektorientierter Programmierung\n- Lernbereitschaft und Bereitschaft, Herausforderungen anzunehmen!\n\n**Was du am Ende meistern wirst:**\n- Benutzerdefinierte Dekoratoren erstellen\n- Architekturen mit komplexer Vererbung entwerfen\n- Speicher mit Generatoren optimieren\n- Ressourcen automatisch verwalten\n- Pythons interne Mechanismen verstehen\n\nBereit für diese epische Reise zur absoluten Python-Meisterschaft?"
+        },
+        "duration": {
+          "fr": "8 minutes",
+          "en": "8 minutes",
+          "es": "8 minutos",
+          "de": "8 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Affiche un message de bienvenue personnel avec ton nom et ce que tu espères apprendre dans ce cours d'expert Python.",
+        "en": "Display a personal welcome message with your name and what you hope to learn in this Python expert course.",
+        "es": "Muestra un mensaje de bienvenida personal con tu nombre y lo que esperas aprender en este curso de experto Python.",
+        "de": "Zeige eine persönliche Willkommensnachricht mit deinem Namen und was du in diesem Python-Experten-Kurs lernen möchtest."
+      },
+      "starter": "# Écris ton message de bienvenue ici\nnom = \"[Ton nom]\"\nobjectif = \"[Ce que tu veux apprendre]\"\n\nprint(f\"Bienvenue dans l'arène des experts, {nom} !\")\nprint(f\"Objectif : {objectif}\")",
+      "solution_explanation": {
+        "fr": "Un excellent début ! Le code affiche un message personnalisé qui motive et donne une direction claire pour cet apprentissage. Chaque expert commence quelque part !",
+        "en": "An excellent start! The code displays a personalized message that motivates and gives clear direction for this learning. Every expert starts somewhere!",
+        "es": "¡Un excelente comienzo! El código muestra un mensaje personalizado que motiva y da dirección clara para este aprendizaje. ¡Cada experto comienza en algún lugar!",
+        "de": "Ein exzellenter Start! Der Code zeigt eine personalisierte Nachricht, die motiviert und klare Richtung für dieses Lernen gibt. Jeder Experte fängt irgendwo an!"
+      },
+      "tests": [
+        "def test_message_personnalise():\n    return 'Bienvenue' in welcome() and '!' in welcome()",
+        "def test_nom_present():\n    return isinstance(nom, str) and len(nom) > 0",
+        "def test_objectif_present():\n    return isinstance(objectif, str) and len(objectif) > 0"
+      ],
+      "hints": {
+        "fr": [
+          "Remplace [Ton nom] par ton véritable nom",
+          "Écris ce que tu veux vraiment apprendre",
+          "Sois créatif et personnel dans ton message",
+          "Un bon début motive pour la suite du voyage !"
+        ],
+        "en": [
+          "Replace [Your name] with your actual name",
+          "Write what you really want to learn",
+          "Be creative and personal in your message",
+          "A good start motivates for the rest of the journey!"
+        ],
+        "es": [
+          "Reemplaza [Tu nombre] con tu nombre real",
+          "Escribe lo que realmente quieres aprender",
+          "Sé creativo y personal en tu mensaje",
+          "¡Un buen inicio motiva para el resto del viaje!"
+        ],
+        "de": [
+          "Ersetze [Dein Name] mit deinem echten Namen",
+          "Schreibe, was du wirklich lernen möchtest",
+          "Sei kreativ und persönlich in deiner Nachricht",
+          "Ein guter Anfang motiviert für den Rest der Reise!"
+        ]
+      }
+    },
+    {
+      "id": "01-expert-basics-refresher",
+      "title": {
+        "fr": "Rappel des Bases - Consolidation des Fondamentaux",
+        "en": "Basics Refresher - Fundamentals Consolidation",
+        "es": "Repaso de Bases - Consolidación de Fundamentos",
+        "de": "Grundlagen-Auffrischung - Konsolidierung der Fundamente"
+      },
+      "stars": 2,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Consolidation - Les Bases Solides de l'Expertise",
+          "en": "Lesson: Consolidation - Solid Foundations of Expertise",
+          "es": "Lección: Consolidación - Fundamentos Sólidos de la Expertise",
+          "de": "Lektion: Konsolidierung - Solide Grundlagen der Expertise"
+        },
+        "content": {
+          "fr": "Avant de plonger dans les concepts avancés, assurons-nous que tes fondations sont solides comme le roc !\n\n**Concepts à maîtriser absolument :**\n\n**1. Fonctions avancées :**\n```python\n# Fonctions avec paramètres par défaut\ndef create_personnage(nom, classe=\"Guerrier\", niveau=1):\n    return {\"nom\": nom, \"classe\": classe, \"niveau\": niveau}\n\n# Fonctions avec *args et **kwargs\ndef attaque_multiple(nom, *degats, **bonus):\n    total = sum(degats) + sum(bonus.values())\n    return f\"{nom} inflige {total} dégâts !\"\n```\n\n**2. Listes en compréhension :**\n```python\n# Filtrer et transformer en une ligne\nnoms = [\"Alice\", \"Bob\", \"Charlie\"]\nnoms_long = [nom.upper() for nom in noms if len(nom) > 4]\n# Résultat : ['ALICE', 'CHARLIE']\n```\n\n**3. Gestion des exceptions :**\n```python\ntry:\n    resultat = operation_dangereuse()\nexcept ValueError as e:\n    print(f\"Erreur de valeur : {e}\")\nexcept Exception as e:\n    print(f\"Erreur inattendue : {e}\")\nfinally:\n    print(\"Nettoyage terminé\")\n```\n\n**4. Dictionnaires avancés :**\n```python\npersonnage = {\n    \"nom\": \"Merlin\",\n    \"competences\": [\"Magie\", \"Sagesse\"],\n    \"stats\": {\"vie\": 100, \"mana\": 150}\n}\n# Accès sécurisé\nmana = personnage.get(\"stats\", {}).get(\"mana\", 0)\n```\n\nPrêt à tester tes fondamentaux avant l'assaut des concepts experts ?",
+          "en": "Before diving into advanced concepts, let's make sure your foundations are rock solid!\n\n**Concepts to master absolutely:**\n\n**1. Advanced functions:**\n```python\n# Functions with default parameters\ndef create_character(name, class_type=\"Warrior\", level=1):\n    return {\"name\": name, \"class\": class_type, \"level\": level}\n\n# Functions with *args and **kwargs\ndef multi_attack(name, *damages, **bonuses):\n    total = sum(damages) + sum(bonuses.values())\n    return f\"{name} deals {total} damage!\"\n```\n\n**2. List comprehensions:**\n```python\n# Filter and transform in one line\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nlong_names = [name.upper() for name in names if len(name) > 4]\n# Result: ['ALICE', 'CHARLIE']\n```\n\n**3. Exception handling:**\n```python\ntry:\n    result = dangerous_operation()\nexcept ValueError as e:\n    print(f\"Value error: {e}\")\nexcept Exception as e:\n    print(f\"Unexpected error: {e}\")\nfinally:\n    print(\"Cleanup complete\")\n```\n\n**4. Advanced dictionaries:**\n```python\ncharacter = {\n    \"name\": \"Merlin\",\n    \"skills\": [\"Magic\", \"Wisdom\"],\n    \"stats\": {\"health\": 100, \"mana\": 150}\n}\n# Safe access\nmana = character.get(\"stats\", {}).get(\"mana\", 0)\n```\n\nReady to test your fundamentals before the assault on expert concepts?",
+          "es": "¡Antes de sumergirnos en conceptos avanzados, asegurémonos de que tus cimientos sean sólidos como una roca!\n\n**Conceptos que debes dominar absolutamente:**\n\n**1. Funciones avanzadas:**\n```python\n# Funciones con parámetros por defecto\ndef create_personaje(nombre, clase=\"Guerrero\", nivel=1):\n    return {\"nombre\": nombre, \"clase\": clase, \"nivel\": nivel}\n\n# Funciones con *args y **kwargs\ndef ataque_multiple(nombre, *daños, **bonus):\n    total = sum(daños) + sum(bonus.values())\n    return f\"{nombre} inflige {total} de daño!\"\n```\n\n**2. Comprensiones de listas:**\n```python\n# Filtrar y transformar en una línea\nnombres = [\"Alicia\", \"Roberto\", \"Carlos\"]\nnombres_largos = [nombre.upper() for nombre in nombres if len(nombre) > 4]\n# Resultado: ['ALICIA', 'CARLOS']\n```\n\n**3. Manejo de excepciones:**\n```python\ntry:\n    resultado = operacion_peligrosa()\nexcept ValueError as e:\n    print(f\"Error de valor: {e}\")\nexcept Exception as e:\n    print(f\"Error inesperado: {e}\")\nfinally:\n    print(\"Limpieza terminada\")\n```\n\n**4. Diccionarios avanzados:**\n```python\npersonaje = {\n    \"nombre\": \"Merlín\",\n    \"habilidades\": [\"Magia\", \"Sabiduría\"],\n    \"estadísticas\": {\"vida\": 100, \"maná\": 150}\n}\n# Acceso seguro\nmaná = personaje.get(\"estadísticas\", {}).get(\"maná\", 0)\n```\n\n¿Listo para probar tus fundamentos antes del asalto a los conceptos de experto?",
+          "de": "Bevor wir uns fortgeschrittenen Konzepten widmen, stellen wir sicher, dass deine Grundlagen felsfest sind!\n\n**Konzepte, die du absolut meistern musst:**\n\n**1. Fortgeschrittene Funktionen:**\n```python\n# Funktionen mit Standardparametern\ndef create_character(name, class_type=\"Warrior\", level=1):\n    return {\"name\": name, \"class\": class_type, \"level\": level}\n\n# Funktionen mit *args und **kwargs\ndef multi_attack(name, *damages, **bonuses):\n    total = sum(damages) + sum(bonuses.values())\n    return f\"{name} verursacht {total} Schaden!\"\n```\n\n**2. Listen-Verständnisse:**\n```python\n# Filtern und transformieren in einer Zeile\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nlong_names = [name.upper() for name in names if len(name) > 4]\n# Ergebnis: ['ALICE', 'CHARLIE']\n```\n\n**3. Exception-Handling:**\n```python\ntry:\n    result = dangerous_operation()\nexcept ValueError as e:\n    print(f\"Wertfehler: {e}\")\nexcept Exception as e:\n    print(f\"Unerwarteter Fehler: {e}\")\nfinally:\n    print(\"Aufräumung abgeschlossen\")\n```\n\n**4. Fortgeschrittene Wörterbücher:**\n```python\ncharacter = {\n    \"name\": \"Merlin\",\n    \"skills\": [\"Magic\", \"Wisdom\"],\n    \"stats\": {\"health\": 100, \"mana\": 150}\n}\n# Sicheres Zugreifen\nmana = character.get(\"stats\", {}).get(\"mana\", 0)\n```\n\nBereit, deine Grundlagen zu testen, bevor der Angriff auf Expertenkonzepte beginnt?"
+        },
+        "duration": {
+          "fr": "15 minutes",
+          "en": "15 minutes",
+          "es": "15 minutos",
+          "de": "15 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée une fonction analyse_personnage(personnage) qui prend un dictionnaire personnage et retourne une analyse détaillée de ses caractéristiques. Utilise les méthodes avancées vues dans la leçon.",
+        "en": "Create a function analyze_character(character) that takes a character dictionary and returns a detailed analysis of its characteristics. Use the advanced methods seen in the lesson.",
+        "es": "Crea una función analiza_personaje(personaje) que tome un diccionario personaje y retorne un análisis detallado de sus características. Usa los métodos avanzados vistos en la lección.",
+        "de": "Erstelle eine Funktion analysiere_charakter(character), die ein Charakter-Wörterbuch nimmt und eine detaillierte Analyse seiner Eigenschaften zurückgibt. Verwende die fortgeschrittenen Methoden aus der Lektion."
+      },
+      "starter": "def analyse_personnage(personnage):\n    # Extraire le nom avec valeur par défaut\n    nom = personnage.get('nom', 'Inconnu')\n    \n    # Extraire les compétences\n    competences = personnage.get('competences', [])\n    nb_competences = len(competences)\n    \n    # Extraire les stats de manière sécurisée\n    stats = personnage.get('stats', {})\n    vie = stats.get('vie', 0)\n    mana = stats.get('mana', 0)\n    \n    # Calculer le score total\n    score_total = vie + mana + (nb_competences * 10)\n    \n    # Créer l'analyse\n    analyse = {\n        'nom': nom,\n        'vie': vie,\n        'mana': mana,\n        'competences': competences,\n        'score_total': score_total\n    }\n    \n    return analyse\n\n# Test\nperso = {\n    'nom': 'Gandalf',\n    'competences': ['Magie', 'Sagesse', 'Télépathie'],\n    'stats': {'vie': 80, 'mana': 200}\n}\n\nresultat = analyse_personnage(perso)\nprint(resultat)",
+      "solution_explanation": {
+        "fr": "Excellent ! Tu as maîtrisé l'accès sécurisé aux dictionnaires avec .get(), le calcul de scores, et la structuration des données. Ce sont les fondations exactes dont tu auras besoin pour les concepts experts !",
+        "en": "Excellent! You've mastered safe dictionary access with .get(), score calculation, and data structuring. These are exactly the foundations you'll need for expert concepts!",
+        "es": "¡Excelente! Has dominado el acceso seguro a diccionarios con .get(), cálculo de puntuaciones y estructuración de datos. ¡Estas son exactamente las bases que necesitarás para los conceptos de experto!",
+        "de": "Exzellent! Du hast sicheren Wörterbuchzugriff mit .get(), Punktberechnung und Datenstrukturierung gemeistert. Das sind genau die Grundlagen, die du für Expertenkonzepte brauchen wirst!"
+      },
+      "tests": [
+        "perso = {'nom': 'Test', 'competences': ['Force'], 'stats': {'vie': 50, 'mana': 30}}\nresultat = analyse_personnage(perso)\nassert resultat['nom'] == 'Test'\nassert resultat['score_total'] == 50 + 30 + (1 * 10)",
+        "perso_vide = {}\nresultat = analyse_personnage(perso_vide)\nassert resultat['nom'] == 'Inconnu'\nassert resultat['score_total'] == 0",
+        "perso_complex = {'nom': 'Mage', 'competences': ['Feu', 'Glace', 'Vent'], 'stats': {'vie': 60, 'mana': 150}}\nresultat = analyse_personnage(perso_complex)\nassert resultat['score_total'] == 60 + 150 + (3 * 10)"
+      ],
+      "hints": {
+        "fr": [
+          "Utilise .get() avec une valeur par défaut pour éviter les erreurs",
+          "Calcule le nombre de compétences avec len()",
+          "Le score total combine vie, mana et bonus de compétences",
+          "Structure le résultat dans un dictionnaire clair"
+        ],
+        "en": [
+          "Use .get() with a default value to avoid errors",
+          "Calculate number of skills with len()",
+          "Total score combines health, mana, and skill bonus",
+          "Structure the result in a clear dictionary"
+        ],
+        "es": [
+          "Usa .get() con un valor por defecto para evitar errores",
+          "Calcula el número de habilidades con len()",
+          "La puntuación total combina vida, maná y bonificación de habilidades",
+          "Estructura el resultado en un diccionario claro"
+        ],
+        "de": [
+          "Verwende .get() mit einem Standardwert, um Fehler zu vermeiden",
+          "Berechne die Anzahl der Fähigkeiten mit len()",
+          "Die Gesamtpunktzahl kombiniert Gesundheit, Mana und Fähigkeitsbonus",
+          "Strukturiere das Ergebnis in einem klaren Wörterbuch"
+        ]
+      }
+    },
+    {
+      "id": "02-expert-functions-deep-dive",
+      "title": {
+        "fr": "Plongée Profonde dans les Fonctions - Vers les Décorateurs",
+        "en": "Deep Dive into Functions - Towards Decorators",
+        "es": "Inmersión Profunda en Funciones - Hacia los Decoradores",
+        "de": "Tiefer Einstieg in Funktionen - Auf dem Weg zu Dekoratoren"
+      },
+      "stars": 2,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Fonctions Avancées - La Porte d'Entrée des Décorateurs",
+          "en": "Lesson: Advanced Functions - The Gateway to Decorators",
+          "es": "Lección: Funciones Avanzadas - La Puerta de Entrada a los Decoradores",
+          "de": "Lektion: Fortgeschrittene Funktionen - Das Tor zu den Dekoratoren"
+        },
+        "content": {
+          "fr": "Les fonctions en Python sont des objets de première classe ! C'est ce qui rend les décorateurs possibles. Plongeons dans les concepts avancés qui préparent le terrain.\n\n**Concepts fondamentaux pour les décorateurs :**\n\n**1. Fonctions comme objets :**\n```python\ndef create_guerrier(nom):\n    def attaquer():\n        return f\"{nom} attaque avec son épée !\"\n    return attaquer\n\n# La fonction retournée garde accès à 'nom'\nattaquant = create_guerrier(\"Arthur\")\nprint(attaquant())  # \"Arthur attaque avec son épée !\"\n```\n\n**2. Fonctions comme paramètres :**\n```python\ndef appliquer_bonus(fonction, bonus):\n    def nouvelle_fonction():\n        resultat = fonction()\n        return f\"{resultat} (+{bonus} points)\"\n    return nouvelle_fonction\n\ndef attaque_simple():\n    return \"Attaque normale\"\n\nattaque_amelioree = appliquer_bonus(attaque_simple, 10)\nprint(attaque_amelioree())\n```\n\n**3. Fonctions qui retournent des fonctions :**\n```python\ndef create_decorateur(multiplicateur):\n    def decorateur(fonction):\n        def fonction_enveloppee(*args, **kwargs):\n            resultat = fonction(*args, **kwargs)\n            return resultat * multiplicateur\n        return fonction_enveloppee\n    return decorateur\n\n# Créer un décorateur qui triple les résultats\ntriple = create_decorateur(3)\n\n@triple\ndef degats_base():\n    return 50\n\nprint(degats_base())  # 150\n```\n\n**4. Closure et portée lexicale :**\n```python\ndef create_compteur():\n    compteur = 0\n    def incrementer():\n        nonlocal compteur  # Important !\n        compteur += 1\n        return compteur\n    return incrementer\n\nmon_compteur = create_compteur()\nprint(mon_compteur())  # 1\nprint(mon_compteur())  # 2\n```\n\n**Le concept clé :** Les fonctions peuvent 'se souvenir' des variables de leur portée parente grâce aux **closures**. C'est la magie derrière les décorateurs !\n\nPrêt à transformer ces fonctions en véritables décorateurs magiques ?",
+          "en": "Functions in Python are first-class objects! This is what makes decorators possible. Let's dive into the advanced concepts that set the stage.\n\n**Fundamental concepts for decorators:**\n\n**1. Functions as objects:**\n```python\ndef create_warrior(name):\n    def attack():\n        return f\"{name} attacks with their sword!\"\n    return attack\n\n# The returned function keeps access to 'name'\nattacker = create_warrior(\"Arthur\")\nprint(attacker())  # \"Arthur attacks with their sword!\"\n```\n\n**2. Functions as parameters:**\n```python\ndef apply_bonus(function, bonus):\n    def new_function():\n        result = function()\n        return f\"{result} (+{bonus} points)\"\n    return new_function\n\ndef simple_attack():\n    return \"Normal attack\"\n\nimproved_attack = apply_bonus(simple_attack, 10)\nprint(improved_attack())\n```\n\n**3. Functions that return functions:**\n```python\ndef create_decorator(multiplier):\n    def decorator(function):\n        def wrapped_function(*args, **kwargs):\n            result = function(*args, **kwargs)\n            return result * multiplier\n        return wrapped_function\n    return decorator\n\n# Create a decorator that triples results\ntriple = create_decorator(3)\n\n@triple\ndef base_damage():\n    return 50\n\nprint(base_damage())  # 150\n```\n\n**4. Closures and lexical scope:**\n```python\ndef create_counter():\n    counter = 0\n    def increment():\n        nonlocal counter  # Important!\n        counter += 1\n        return counter\n    return increment\n\nmy_counter = create_counter()\nprint(my_counter())  # 1\nprint(my_counter())  # 2\n```\n\n**The key concept:** Functions can 'remember' variables from their parent scope thanks to **closures**. This is the magic behind decorators!\n\nReady to transform these functions into true magical decorators?",
+          "es": "¡Las funciones en Python son objetos de primera clase! Esto es lo que hace posible los decoradores. Sumergámonos en los conceptos avanzados que preparan el escenario.\n\n**Conceptos fundamentales para decoradores:**\n\n**1. Funciones como objetos:**\n```python\ndef create_guerrero(nombre):\n    def atacar():\n        return f\"{nombre} ataca con su espada!\"\n    return atacar\n\n# La función retornada mantiene acceso a 'nombre'\natacante = create_guerrero(\"Arturo\")\nprint(atacante())  # \"Arturo ataca con su espada!\"\n```\n\n**2. Funciones como parámetros:**\n```python\ndef aplicar_bonus(funcion, bonus):\n    def nueva_funcion():\n        resultado = funcion()\n        return f\"{resultado} (+{bonus} puntos)\"\n    return nueva_funcion\n\ndef ataque_simple():\n    return \"Ataque normal\"\n\nataque_mejorado = aplicar_bonus(ataque_simple, 10)\nprint(ataque_mejorado())\n```\n\n**3. Funciones que retornan funciones:**\n```python\ndef create_decorador(multiplicador):\n    def decorador(funcion):\n        def funcion_envolvida(*args, **kwargs):\n            resultado = funcion(*args, **kwargs)\n            return resultado * multiplicador\n        return funcion_envolvida\n    return decorador\n\n# Crear un decorador que triplica los resultados\ntriple = create_decorador(3)\n\n@triple\ndef daño_base():\n    return 50\n\nprint(daño_base())  # 150\n```\n\n**4. Closures y alcance léxico:**\n```python\ndef create_contador():\n    contador = 0\n    def incrementar():\n        nonlocal contador  # ¡Importante!\n        contador += 1\n        return contador\n    return incrementar\n\nmi_contador = create_contador()\nprint(mi_contador())  # 1\nprint(mi_contador())  # 2\n```\n\n**El concepto clave:** Las funciones pueden 'recordar' variables de su alcance padre gracias a los **closures**. ¡Esta es la magia detrás de los decoradores!\n\n¿Listo para transformar estas funciones en verdaderos decoradores mágicos?",
+          "de": "Funktionen in Python sind Objekte erster Klasse! Das macht Dekoratoren möglich. Tauchen wir ein in die fortgeschrittenen Konzepte, die die Bühne bereiten.\n\n**Grundlegende Konzepte für Dekoratoren:**\n\n**1. Funktionen als Objekte:**\n```python\ndef create_warrior(name):\n    def attack():\n        return f\"{name} attacks with their sword!\"\n    return attack\n\n# Die zurückgegebene Funktion behält Zugriff auf 'name'\nattacker = create_warrior(\"Arthur\")\nprint(attacker())  # \"Arthur attacks with their sword!\"\n```\n\n**2. Funktionen als Parameter:**\n```python\ndef apply_bonus(function, bonus):\n    def new_function():\n        result = function()\n        return f\"{result} (+{bonus} points)\"\n    return new_function\n\ndef simple_attack():\n    return \"Normal attack\"\n\nimproved_attack = apply_bonus(simple_attack, 10)\nprint(improved_attack())\n```\n\n**3. Funktionen, die Funktionen zurückgeben:**\n```python\ndef create_decorator(multiplier):\n    def decorator(function):\n        def wrapped_function(*args, **kwargs):\n            result = function(*args, **kwargs)\n            return result * multiplier\n        return wrapped_function\n    return decorator\n\n# Einen Dekorator erstellen, der Ergebnisse verdreifacht\ntriple = create_decorator(3)\n\n@triple\ndef base_damage():\n    return 50\n\nprint(base_damage())  # 150\n```\n\n**4. Closures und lexikalischer Geltungsbereich:**\n```python\ndef create_counter():\n    counter = 0\n    def increment():\n        nonlocal counter  # Wichtig!\n        counter += 1\n        return counter\n    return increment\n\nmy_counter = create_counter()\nprint(my_counter())  # 1\nprint(my_counter())  # 2\n```\n\n**Das Schlüsselkonzept:** Funktionen können sich an Variablen aus ihrem übergeordneten Geltungsbereich dank **Closures** 'erinnern'. Das ist die Magie hinter Dekoratoren!\n\nBereit, diese Funktionen in wahre magische Dekoratoren zu verwandeln?"
+        },
+        "duration": {
+          "fr": "18 minutes",
+          "en": "18 minutes",
+          "es": "18 minutos",
+          "de": "18 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée une fonction create_amplificateur(facteur) qui retourne une fonction amplifiant son résultat par le facteur donné. Puis utilise-la pour créer une fonction triple et une fonction double.",
+        "en": "Create a function create_amplifier(factor) that returns a function that amplifies its result by the given factor. Then use it to create a triple function and a double function.",
+        "es": "Crea una función create_amplificador(factor) que retorne una función que amplifique su resultado por el factor dado. Luego úsala para crear una función triple y una función doble.",
+        "de": "Erstelle eine Funktion erstelle_verstärker(faktor), die eine Funktion zurückgibt, die ihr Ergebnis um den gegebenen Faktor verstärkt. Verwende sie dann, um eine Triple-Funktion und eine Doppel-Funktion zu erstellen."
+      },
+      "starter": "def create_amplificateur(facteur):\n    def amplificateur(valeur):\n        return valeur * facteur\n    return amplificateur\n\n# Créer des fonctions spécialisées\ndouble = create_amplificateur(2)\ntriple = create_amplificateur(3)\n\n# Tester\nprint(double(10))    # Devrait afficher 20\nprint(triple(10))    # Devrait afficher 30\nprint(double(5))     # Devrait afficher 10",
+      "solution_explanation": {
+        "fr": "Parfait ! Tu viens de créer ta première 'factory' de fonctions ! Chaque amplificateur 'se souvient' de son facteur grâce à la closure. C'est exactement le mécanisme derrière les décorateurs - tu es prêt !",
+        "en": "Perfect! You've just created your first function 'factory'! Each amplifier 'remembers' its factor thanks to the closure. This is exactly the mechanism behind decorators - you're ready!",
+        "es": "¡Perfecto! ¡Acabas de crear tu primera 'fábrica' de funciones! Cada amplificador 'recuerda' su factor gracias a la closure. Este es exactamente el mecanismo detrás de los decoradores - ¡estás listo!",
+        "de": "Perfekt! Du hast gerade deine erste Funktions-'Fabrik' erstellt! Jeder Verstärker 'erinnert' sich an seinen Faktor dank der Closure. Das ist genau der Mechanismus hinter Dekoratoren - du bist bereit!"
+      },
+      "tests": [
+        "d = create_amplificateur(2)\nassert d(5) == 10\nt = create_amplificateur(3)\nassert t(7) == 21",
+        "double = create_amplificateur(2)\nassert double(0) == 0\nassert double(-3) == -6",
+        "quintuple = create_amplificateur(5)\nassert quintuple(4) == 20"
+      ],
+      "hints": {
+        "fr": [
+          "La fonction interne utilise le paramètre facteur de la fonction externe",
+          "C'est une closure : la fonction garde accès à son environnement",
+          "Chaque appel à create_amplificateur crée une nouvelle fonction",
+          "Teste avec différents facteurs pour bien comprendre"
+        ],
+        "en": [
+          "The inner function uses the factor parameter from the outer function",
+          "This is a closure: the function keeps access to its environment",
+          "Each call to create_amplifier creates a new function",
+          "Test with different factors to understand well"
+        ],
+        "es": [
+          "La función interna usa el parámetro factor de la función externa",
+          "Esto es una closure: la función mantiene acceso a su entorno",
+          "Cada llamada a create_amplificador crea una nueva función",
+          "Prueba con diferentes factores para entender bien"
+        ],
+        "de": [
+          "Die innere Funktion verwendet den Faktor-Parameter der äußeren Funktion",
+          "Dies ist eine Closure: Die Funktion behält Zugriff auf ihre Umgebung",
+          "Jeder Aufruf von erstelle_verstärker erstellt eine neue Funktion",
+          "Teste mit verschiedenen Faktoren zum besseren Verständnis"
+        ]
+      }
+    },
+    {
+      "id": "03-expert-decorators",
+      "title": {
+        "fr": "Les Pouvoirs Mystiques - Décorateurs",
+        "en": "Mystical Powers - Decorators",
+        "es": "Poderes Místicos - Decoradores",
+        "de": "Mystische Kräfte - Dekoratoren"
+      },
+      "stars": 3,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Les Décorateurs - Magie Python",
+          "en": "Lesson: Decorators - Python Magic",
+          "es": "Lección: Decoradores - Magia Python",
+          "de": "Lektion: Dekoratoren - Python Magie"
+        },
+        "content": {
+          "fr": "Les décorateurs en Python sont comme des pouvoirs mystiques qui modifient le comportement des fonctions sans changer leur code !\n\n**Concepts clés :**\n- Un décorateur est une fonction qui prend une autre fonction en paramètre\n- Il retourne une nouvelle fonction (généralement modifiée)\n- On utilise @nom_decorateur pour appliquer un décorateur\n- Les décorateurs peuvent être chaînés\n\n**Syntaxe de base :**\n```python\ndef mon_decorateur(fonction):\n    def fonction_modifiee(*args, **kwargs):\n        print(\"Avant l'appel de la fonction\")\n        resultat = fonction(*args, **kwargs)\n        print(\"Après l'appel de la fonction\")\n        return resultat\n    return fonction_modifiee\n\n@mon_decorateur\ndef ma_fonction():\n    return \"Hello World\"\n```\n\nPrêt à maîtriser les pouvoirs mystiques de Python ?",
+          "en": "Decorators in Python are like mystical powers that modify function behavior without changing their code!\n\n**Key concepts:**\n- A decorator is a function that takes another function as parameter\n- It returns a new function (usually modified)\n- We use @decorator_name to apply a decorator\n- Decorators can be chained\n\n**Basic syntax:**\n```python\ndef my_decorator(function):\n    def modified_function(*args, **kwargs):\n        print(\"Before function call\")\n        result = function(*args, **kwargs)\n        print(\"After function call\")\n        return result\n    return modified_function\n\n@my_decorator\ndef my_function():\n    return \"Hello World\"\n```\n\nReady to master the mystical powers of Python?",
+          "es": "Los decoradores en Python son como poderes místicos que modifican el comportamiento de las funciones sin cambiar su código!\n\n**Conceptos clave:**\n- Un decorador es una función que toma otra función como parámetro\n- Retorna una nueva función (usualmente modificada)\n- Usamos @nombre_decorador para aplicar un decorador\n- Los decoradores pueden ser encadenados\n\n**Sintaxis básica:**\n```python\ndef mi_decorador(funcion):\n    def funcion_modificada(*args, **kwargs):\n        print(\"Antes de llamar a la función\")\n        resultado = funcion(*args, **kwargs)\n        print(\"Después de llamar a la función\")\n        return resultado\n    return funcion_modificada\n\n@mi_decorador\ndef mi_funcion():\n    return \"Hola Mundo\"\n```\n\n¿Listo para dominar los poderes místicos de Python?",
+          "de": "Dekoratoren in Python sind wie mystische Kräfte, die das Verhalten von Funktionen ändern, ohne ihren Code zu verändern!\n\n**Wichtige Konzepte:**\n- Ein Dekorator ist eine Funktion, die eine andere Funktion als Parameter nimmt\n- Er gibt eine neue Funktion zurück (normalerweise modifiziert)\n- Wir verwenden @dekorator_name um einen Dekorator anzuwenden\n- Dekoratoren können verkettet werden\n\n**Grundlegende Syntax:**\n```python\ndef mein_dekorator(funktion):\n    def modifizierte_funktion(*args, **kwargs):\n        print(\"Vor dem Funktionsaufruf\")\n        ergebnis = funktion(*args, **kwargs)\n        print(\"Nach dem Funktionsaufruf\")\n        return ergebnis\n    return modifizierte_funktion\n\n@mein_dekorator\ndef meine_funktion():\n    return \"Hallo Welt\"\n```\n\nBereit, die mystischen Kräfte von Python zu meistern?"
+        },
+        "duration": {
+          "fr": "12 minutes",
+          "en": "12 minutes",
+          "es": "12 minutos",
+          "de": "12 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée un décorateur @magie qui transforme n'importe quelle fonction pour qu'elle ajoute '✨ ' au début de son résultat.",
+        "en": "Create a @magic decorator that transforms any function to add '✨ ' at the beginning of its result.",
+        "es": "Crea un decorador @magia que transforme cualquier función para que agregue '✨ ' al principio de su resultado.",
+        "de": "Erstelle einen @magic Dekorator, der jede Funktion so transformiert, dass sie '✨ ' am Anfang ihres Ergebnisses hinzufügt."
+      },
+      "starter": "def magie(fonction):\n    def fonction_modifiee(*args, **kwargs):\n        resultat = fonction(*args, **kwargs)\n        return f\"✨ {resultat}\"\n    return fonction_modifiee\n\n@magie\ndef sort():\n    return \"Feu électrique\"\n\nprint(sort())",
+      "solution_explanation": {
+        "fr": "Le décorateur @magie enveloppe la fonction originale et ajoute une étincelle magique ✨ à son résultat !",
+        "en": "The @magic decorator wraps the original function and adds a magical sparkle ✨ to its result!",
+        "es": "¡El decorador @magia envuelve la función original y agrega un brillo mágico ✨ a su resultado!",
+        "de": "Der @magic Dekorator umschließt die ursprüngliche Funktion und fügt einen magischen Funken ✨ zu ihrem Ergebnis hinzu!"
+      },
+      "tests": [
+        "def test_sort():\n    return sort() == \"✨ Feu électrique\"",
+        "def test_guerison():\n    @magie\n    def guerison():\n        return \"Soin\"\n    return guerison() == \"✨ Soin\"",
+        "def test_avec_params():\n    @magie\n    def attaque(nom):\n        return f\"Attaque {nom}\"\n    return attaque(\"dragon\") == \"✨ Attaque dragon\""
+      ],
+      "hints": {
+        "fr": [
+          "Le décorateur prend une fonction en paramètre",
+          "Retourne une nouvelle fonction qui modifie le résultat",
+          "Utilise *args, **kwargs pour accepter tous les paramètres",
+          "Ajoute '✨ ' avant le résultat original"
+        ],
+        "en": [
+          "The decorator takes a function as parameter",
+          "Returns a new function that modifies the result",
+          "Use *args, **kwargs to accept all parameters",
+          "Add '✨ ' before the original result"
+        ],
+        "es": [
+          "El decorador toma una función como parámetro",
+          "Retorna una nueva función que modifica el resultado",
+          "Usa *args, **kwargs para aceptar todos los parámetros",
+          "Agrega '✨ ' antes del resultado original"
+        ],
+        "de": [
+          "Der Dekorator nimmt eine Funktion als Parameter",
+          "Gibt eine neue Funktion zurück, die das Ergebnis modifiziert",
+          "Verwende *args, **kwargs um alle Parameter zu akzeptieren",
+          "Füge '✨ ' vor das ursprüngliche Ergebnis hinzu"
+        ]
+      }
+    },
+    {
+      "id": "02-expert-classes",
+      "title": {
+        "fr": "La Forge des Héros - Classes et Héritage",
+        "en": "The Hero's Forge - Classes and Inheritance",
+        "es": "La Forja de Héroes - Clases y Herencia",
+        "de": "Die Schmiede der Helden - Klassen und Vererbung"
+      },
+      "stars": 3,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Classes et Héritage - Architecture des Pouvoirs",
+          "en": "Lesson: Classes and Inheritance - Power Architecture",
+          "es": "Lección: Clases y Herencia - Arquitectura de Poderes",
+          "de": "Lektion: Klassen und Vererbung - Machtarchitektur"
+        },
+        "content": {
+          "fr": "Les classes en Python sont comme des plans de construction pour créer des objets avec des caractéristiques et des comportements similaires. L'héritage permet de créer des classes spécialisées à partir de classes existantes !\n\n**Concepts fondamentaux :**\n- **Classe** : Plan/moule pour créer des objets\n- **Objet** : Instance d'une classe\n- **Attributs** : Caractéristiques/données d'un objet\n- **Méthodes** : Actions/comportements d'un objet\n- **Héritage** : Mécanisme pour créer des classes spécialisées\n\n**Syntaxe de base :**\n```python\nclass Personnage:\n    def __init__(self, nom, vie):\n        self.nom = nom\n        self.vie = vie\n    \n    def attaquer(self):\n        return f\"{self.nom} attaque !\"\n```\n\n**Héritage :**\n```python\nclass Guerrier(Personnage):\n    def __init__(self, nom, vie, force):\n        super().__init__(nom, vie)\n        self.force = force\n    \n    def attaque_speciale(self):\n        return f\"{self.nom} lance une attaque puissante de {self.force} dégâts !\"\n```\n\nPrêt à forger tes propres héros ?",
+          "en": "Classes in Python are like blueprints for creating objects with similar characteristics and behaviors. Inheritance allows creating specialized classes from existing ones!\n\n**Fundamental concepts:**\n- **Class**: Blueprint/mold for creating objects\n- **Object**: Instance of a class\n- **Attributes**: Characteristics/data of an object\n- **Methods**: Actions/behaviors of an object\n- **Inheritance**: Mechanism to create specialized classes\n\n**Basic syntax:**\n```python\nclass Character:\n    def __init__(self, name, health):\n        self.name = name\n        self.health = health\n    \n    def attack(self):\n        return f\"{self.name} attacks!\"\n```\n\n**Inheritance:**\n```python\nclass Warrior(Character):\n    def __init__(self, name, health, strength):\n        super().__init__(name, health)\n        self.strength = strength\n    \n    def special_attack(self):\n        return f\"{self.name} launches a powerful attack of {self.strength} damage!\"\n```\n\nReady to forge your own heroes?",
+          "es": "Las clases en Python son como planos para crear objetos con características y comportamientos similares. ¡La herencia permite crear clases especializadas a partir de existentes!\n\n**Conceptos fundamentales:**\n- **Clase**: Plano/molde para crear objetos\n- **Objeto**: Instancia de una clase\n- **Atributos**: Características/datos de un objeto\n- **Métodos**: Acciones/comportamientos de un objeto\n- **Herencia**: Mecanismo para crear clases especializadas\n\n**Sintaxis básica:**\n```python\nclass Personaje:\n    def __init__(self, nombre, vida):\n        self.nombre = nombre\n        self.vida = vida\n    \n    def atacar(self):\n        return f\"{self.nombre} ataca!\"\n```\n\n**Herencia:**\n```python\nclass Guerrero(Personaje):\n    def __init__(self, nombre, vida, fuerza):\n        super().__init__(nombre, vida)\n        self.fuerza = fuerza\n    \n    def ataque_especial(self):\n        return f\"{self.nombre} lanza un ataque poderoso de {self.fuerza} de daño!\"\n```\n\n¿Listo para forjar tus propios héroes?",
+          "de": "Klassen in Python sind wie Baupläne zum Erstellen von Objekten mit ähnlichen Merkmalen und Verhaltensweisen. Vererbung ermöglicht die Erstellung spezialisierter Klassen aus bestehenden!\n\n**Grundlegende Konzepte:**\n- **Klasse**: Bauplan/Vorlage zum Erstellen von Objekten\n- **Objekt**: Instanz einer Klasse\n- **Attribute**: Eigenschaften/Daten eines Objekts\n- **Methoden**: Aktionen/Verhaltensweisen eines Objekts\n- **Vererbung**: Mechanismus zur Erstellung spezialisierter Klassen\n\n**Grundlegende Syntax:**\n```python\nclass Charakter:\n    def __init__(self, name, gesundheit):\n        self.name = name\n        self.gesundheit = gesundheit\n    \n    def angreifen(self):\n        return f\"{self.name} greift an!\"\n```\n\n**Vererbung:**\n```python\nclass Krieger(Charakter):\n    def __init__(self, name, gesundheit, staerke):\n        super().__init__(name, gesundheit)\n        self.staerke = staerke\n    \n    def spezialangriff(self):\n        return f\"{self.name} führt einen mächtigen Angriff mit {self.staerke} Schaden aus!\"\n```\n\nBereit, deine eigenen Helden zu schmieden?"
+        },
+        "duration": {
+          "fr": "15 minutes",
+          "en": "15 minutes",
+          "es": "15 minutos",
+          "de": "15 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée une classe Dragon qui hérite de Personnage avec les attributs nom, vie, couleur_feu et une méthode crache_feu() qui retourne '[nom] crache du feu [couleur_feu] !'",
+        "en": "Create a Dragon class that inherits from Character with attributes name, health, fire_color and a method breathe_fire() that returns '[name] breathes [fire_color] fire!'",
+        "es": "Crea una clase Dragón que herede de Personaje con atributos nombre, vida, color_fuego y un método escupe_fuego() que retorne '[nombre] escupe fuego [color_fuego]!'",
+        "de": "Erstelle eine Drachenklasse, die von Charakter erbt mit den Attributen name, gesundheit, feuer_farbe und einer methode feuer_spucken() die '[name] spuckt [feuer_farbe] feuer!' zurückgibt"
+      },
+      "starter": "class Personnage:\n    def __init__(self, nom, vie):\n        self.nom = nom\n        self.vie = vie\n\nclass Dragon(Personnage):\n    def __init__(self, nom, vie, couleur_feu):\n        super().__init__(nom, vie)\n        self.couleur_feu = couleur_feu\n    \n    def crache_feu(self):\n        return f\"{self.nom} crache du feu {self.couleur_feu} !\"\n\n# Test\ndragon = Dragon(\"Smaug\", 1000, \"rouge\")\nprint(dragon.crache_feu())",
+      "solution_explanation": {
+        "fr": "Le Dragon hérite des caractéristiques de base du Personnage (nom, vie) grâce à super().__init__(), puis ajoute sa propre spécialité : la couleur de son feu et sa capacité à cracher des flammes !",
+        "en": "The Dragon inherits basic characteristics from Character (name, health) thanks to super().__init__(), then adds its own specialty: fire color and the ability to breathe flames!",
+        "es": "¡El Dragón hereda las características básicas del Personaje (nombre, vida) gracias a super().__init__(), luego agrega su propia especialidad: el color de su fuego y la capacidad de escupir llamas!",
+        "de": "Der Drache erbt grundlegende Eigenschaften von Charakter (name, gesundheit) dank super().__init__(), fügt dann aber seine eigene Spezialität hinzu: Feuerfarbe und die Fähigkeit, Feuer zu spucken!"
+      },
+      "tests": [
+        "dragon = Dragon(\"Smaug\", 1000, \"rouge\")\nassert dragon.nom == \"Smaug\"\nassert dragon.vie == 1000\nassert dragon.couleur_feu == \"rouge\"",
+        "assert dragon.crache_feu() == \"Smaug crache du feu rouge !\"",
+        "dragon2 = Dragon(\"Falkor\", 800, \"blanc\")\nassert dragon2.crache_feu() == \"Falkor crache du feu blanc !\"",
+        "assert isinstance(dragon, Personnage) == True"
+      ],
+      "hints": {
+        "fr": [
+          "Utilise super().__init__(nom, vie) pour appeler le constructeur parent",
+          "Ajoute self.couleur_feu comme nouvel attribut",
+          "La méthode crache_feu() utilise f-string pour formater le message",
+          "Le Dragon est un Personnage (héritage)"
+        ],
+        "en": [
+          "Use super().__init__(name, health) to call parent constructor",
+          "Add self.fire_color as new attribute",
+          "The breathe_fire() method uses f-string to format message",
+          "Dragon is a Character (inheritance)"
+        ],
+        "es": [
+          "Usa super().__init__(nombre, vida) para llamar al constructor padre",
+          "Agrega self.color_fuego como nuevo atributo",
+          "El método escupe_fuego() usa f-string para formatear el mensaje",
+          "Dragón es un Personaje (herencia)"
+        ],
+        "de": [
+          "Verwende super().__init__(name, gesundheit) um Elternkonstruktor aufzurufen",
+          "Füge self.feuer_farbe als neues Attribut hinzu",
+          "Die feuer_spucken() Methode verwendet f-string zur Nachrichtformatierung",
+          "Drache ist ein Charakter (Vererbung)"
+        ]
+      }
+    },
+    {
+      "id": "03-expert-generators",
+      "title": {
+        "fr": "Le Flux Infini - Générateurs et Itérateurs",
+        "en": "The Infinite Stream - Generators and Iterators",
+        "es": "El Flujo Infinito - Generadores e Iteradores",
+        "de": "Der unendliche Strom - Generatoren und Iteratoren"
+      },
+      "stars": 4,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Générateurs - Économie de Mémoire",
+          "en": "Lesson: Generators - Memory Efficiency",
+          "es": "Lección: Generadores - Eficiencia de Memoria",
+          "de": "Lektion: Generatoren - Speichereffizienz"
+        },
+        "content": {
+          "fr": "Les générateurs en Python sont comme des sources magiques qui produisent des valeurs à la demande sans tout stocker en mémoire !\n\n**Concepts clés :**\n- **Générateur** : Fonction qui produit des valeurs à la demande avec yield\n- **Itérateur** : Objet qui peut être parcouru avec une boucle\n- **Lazy evaluation** : Les valeurs sont calculées uniquement quand nécessaires\n- **Memory efficient** : Une seule valeur en mémoire à la fois\n\n**Syntaxe du générateur :**\n```python\ndef mon_generateur():\n    yield 1\n    yield 2\n    yield 3\n\n# Utilisation\nfor valeur in mon_generateur():\n    print(valeur)  # Affiche 1, 2, 3\n```\n\n**Générateur infini :**\n```python\ndef nombres_infinis():\n    i = 0\n    while True:\n        yield i\n        i += 1\n\n# Attention : boucle infinie !\nfor nombre in nombres_infinis():\n    print(nombre)\n    if nombre >= 5:  # Condition d'arrêt\n        break\n```\n\nPrêt à maîtriser le flux infini des données ?",
+          "en": "Generators in Python are like magical sources that produce values on demand without storing everything in memory!\n\n**Key concepts:**\n- **Generator**: Function that produces values on demand with yield\n- **Iterator**: Object that can be traversed with a loop\n- **Lazy evaluation**: Values are calculated only when needed\n- **Memory efficient**: Only one value in memory at a time\n\n**Generator syntax:**\n```python\ndef my_generator():\n    yield 1\n    yield 2\n    yield 3\n\n# Usage\nfor value in my_generator():\n    print(value)  # Prints 1, 2, 3\n```\n\n**Infinite generator:**\n```python\ndef infinite_numbers():\n    i = 0\n    while True:\n        yield i\n        i += 1\n\n# Warning: infinite loop!\nfor number in infinite_numbers():\n    print(number)\n    if number >= 5:  # Stop condition\n        break\n```\n\nReady to master the infinite stream of data?",
+          "es": "Los generadores en Python son como fuentes mágicas que producen valores bajo demanda sin almacenar todo en memoria!\n\n**Conceptos clave:**\n- **Generador**: Función que produce valores bajo demanda con yield\n- **Iterador**: Objeto que puede ser recorrido con un bucle\n- **Evaluación perezosa**: Los valores se calculan solo cuando son necesarios\n- **Eficiente en memoria**: Solo un valor en memoria a la vez\n\n**Sintaxis del generador:**\n```python\ndef mi_generador():\n    yield 1\n    yield 2\n    yield 3\n\n# Uso\nfor valor in mi_generador():\n    print(valor)  # Imprime 1, 2, 3\n```\n\n**Generador infinito:**\n```python\ndef numeros_infinitos():\n    i = 0\n    while True:\n        yield i\n        i += 1\n\n# ¡Advertencia: bucle infinito!\nfor numero in numeros_infinitos():\n    print(numero)\n    if numero >= 5:  # Condición de parada\n        break\n```\n\n¿Listo para dominar el flujo infinito de datos?",
+          "de": "Generatoren in Python sind wie magische Quellen, die Werte auf Anfrage produzieren, ohne alles im Speicher zu halten!\n\n**Wichtige Konzepte:**\n- **Generator**: Funktion, die Werte auf Anfrage mit yield produziert\n- **Iterator**: Objekt, das mit einer Schleife durchlaufen werden kann\n- **Lazy Evaluation**: Werte werden nur berechnet, wenn sie benötigt werden\n- **Speichereffizient**: Nur ein Wert gleichzeitig im Speicher\n\n**Generator-Syntax:**\n```python\ndef mein_generator():\n    yield 1\n    yield 2\n    yield 3\n\n# Verwendung\nfor wert in mein_generator():\n    print(wert)  # Gibt 1, 2, 3 aus\n```\n\n**Unendlicher Generator:**\n```python\ndef unendliche_zahlen():\n    i = 0\n    while True:\n        yield i\n        i += 1\n# Warnung: Endlosschleife!\nfor zahl in unendliche_zahlen():\n    print(zahl)\n    if zahl >= 5:  # Stoppbedingung\n        break\n```\n\nBereit, den unendlichen Datenstrom zu meistern?"
+        },
+        "duration": {
+          "fr": "18 minutes",
+          "en": "18 minutes",
+          "es": "18 minutos",
+          "de": "18 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée un générateur nombres_puissants(max) qui yield les nombres de 1 à max, chacun élevé à sa propre puissance (1^1, 2^2, 3^3, etc.).",
+        "en": "Create a generator powerful_numbers(max) that yields numbers from 1 to max, each raised to its own power (1^1, 2^2, 3^3, etc.).",
+        "es": "Crea un generador numeros_poderosos(max) que yield los números de 1 a max, cada uno elevado a su propia potencia (1^1, 2^2, 3^3, etc.).",
+        "de": "Erstelle einen Generator mächtige_zahlen(max), der Zahlen von 1 bis max liefert, jede potenziert mit sich selbst (1^1, 2^2, 3^3, etc.)."
+      },
+      "starter": "def nombres_puissants(max):\n    for i in range(1, max + 1):\n        yield i ** i\n\n# Test\nfor nombre in nombres_puissants(5):\n    print(nombre)",
+      "solution_explanation": {
+        "fr": "Le générateur utilise yield pour produire chaque nombre à la demande. i**i calcule 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125... C'est ultra efficace en mémoire !",
+        "en": "The generator uses yield to produce each number on demand. i**i calculates 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125... It's ultra memory efficient!",
+        "es": "¡El generador usa yield para producir cada número bajo demanda. i**i calcula 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125... Es ultra eficiente en memoria!",
+        "de": "Der Generator verwendet yield, um jede Zahl auf Anfrage zu produzieren. i**i berechnet 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125... Es ist ultra-speichereffizient!"
+      },
+      "tests": [
+        "resultats = list(nombres_puissants(3))\nassert resultats == [1, 4, 27]",
+        "resultats = list(nombres_puissants(5))\nassert resultats == [1, 4, 27, 256, 3125]",
+        "gen = nombres_puissants(2)\nassert next(gen) == 1\nassert next(gen) == 4",
+        "gen = nombres_puissants(4)\nassert sum(gen) == 1 + 4 + 27 + 256"
+      ],
+      "hints": {
+        "fr": [
+          "Utilise yield pour produire les valeurs une par une",
+          "La boucle va de 1 à max (inclus)",
+          "i ** i calcule i puissance i",
+          "Testez avec max=3 pour obtenir [1, 4, 27]"
+        ],
+        "en": [
+          "Use yield to produce values one by one",
+          "Loop goes from 1 to max (inclusive)",
+          "i ** i calculates i to the power of i",
+          "Test with max=3 to get [1, 4, 27]"
+        ],
+        "es": [
+          "Usa yield para producir valores uno por uno",
+          "El bucle va de 1 a max (incluido)",
+          "i ** i calcula i elevado a i",
+          "Prueba con max=3 para obtener [1, 4, 27]"
+        ],
+        "de": [
+          "Verwende yield, um Werte einzeln zu produzieren",
+          "Schleife geht von 1 bis max (inklusive)",
+          "i ** i berechnet i hoch i",
+          "Teste mit max=3 um [1, 4, 27] zu erhalten"
+        ]
+      }
+    },
+    {
+      "id": "04-expert-context-managers",
+      "title": {
+        "fr": "Les Gardiens des Ressources - Context Managers",
+        "en": "The Resource Guardians - Context Managers",
+        "es": "Los Guardianes de Recursos - Context Managers",
+        "de": "Die Ressourcenwächter - Kontextmanager"
+      },
+      "stars": 4,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Context Managers - Gestion Automatique des Ressources",
+          "en": "Lesson: Context Managers - Automatic Resource Management",
+          "es": "Lección: Context Managers - Gestión Automática de Recursos",
+          "de": "Lektion: Kontextmanager - Automatische Ressourcenverwaltung"
+        },
+        "content": {
+          "fr": "Les context managers en Python sont comme des gardiens magiques qui gèrent automatiquement l'ouverture et la fermeture des ressources !\n\n**Concepts clés :**\n- **Context Manager** : Objet qui gère l'entrée et la sortie d'un contexte\n- **with statement** : Syntaxe pour utiliser les context managers\n- **Ressource** : Fichier, connexion base de données, lock, etc.\n- **Cleanup automatique** : Libération garantie des ressources\n\n**Syntaxe with :**\n```python\nwith open(\"fichier.txt\", \"r\") as f:\n    contenu = f.read()\n# f est automatiquement fermé ici\n```\n\n**Créer son propre context manager :**\n```python\nclass MonContextManager:\n    def __enter__(self):\n        print(\"Entrée dans le contexte\")\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Sortie du contexte\")\n        return False\n\nwith MonContextManager() as cm:\n    print(\"À l'intérieur du contexte\")\n```\n\nPrêt à devenir le gardien des ressources ?",
+          "en": "Context managers in Python are like magical guardians that automatically manage the opening and closing of resources!\n\n**Key concepts:**\n- **Context Manager**: Object that manages entry and exit of a context\n- **with statement**: Syntax to use context managers\n- **Resource**: File, database connection, lock, etc.\n- **Automatic cleanup**: Guaranteed resource release\n\n**with syntax:**\n```python\nwith open(\"file.txt\", \"r\") as f:\n    content = f.read()\n# f is automatically closed here\n```\n\n**Creating your own context manager:**\n```python\nclass MyContextManager:\n    def __enter__(self):\n        print(\"Entering context\")\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exiting context\")\n        return False\n\nwith MyContextManager() as cm:\n    print(\"Inside context\")\n```\n\nReady to become the guardian of resources?",
+          "es": "Los context managers en Python son como guardianes mágicos que gestionan automáticamente la apertura y cierre de recursos!\n\n**Conceptos clave:**\n- **Context Manager**: Objeto que gestiona la entrada y salida de un contexto\n- **with statement**: Sintaxis para usar context managers\n- **Recurso**: Archivo, conexión base de datos, lock, etc.\n- **Limpieza automática**: Liberación garantizada de recursos\n\n**Sintaxis with:**\n```python\nwith open(\"archivo.txt\", \"r\") as f:\n    contenido = f.read()\n# f se cierra automáticamente aquí\n```\n\n**Crear tu propio context manager:**\n```python\nclass MiContextManager:\n    def __enter__(self):\n        print(\"Entrando al contexto\")\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Saliendo del contexto\")\n        return False\n\nwith MiContextManager() as cm:\n    print(\"Dentro del contexto\")\n```\n\n¿Listo para convertirte en el guardián de recursos?",
+          "de": "Kontextmanager in Python sind wie magische Wächter, die automatisch das Öffnen und Schließen von Ressourcen verwalten!\n\n**Wichtige Konzepte:**\n- **Kontextmanager**: Objekt, das Ein- und Austritt eines Kontexts verwaltet\n- **with Anweisung**: Syntax zur Verwendung von Kontextmanagern\n- **Ressource**: Datei, Datenbankverbindung, Lock, etc.\n- **Automatische Bereinigung**: Garantierte Ressourcenfreigabe\n\n**with Syntax:**\n```python\nwith open(\"datei.txt\", \"r\") as f:\n    inhalt = f.read()\n# f wird automatisch hier geschlossen\n```\n\n**Eigener Kontextmanager erstellen:**\n```python\nclass MeinKontextManager:\n    def __enter__(self):\n        print(\"Kontext betreten\")\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Kontext verlassen\")\n        return False\n\nwith MeinKontextManager() as cm:\n    print(\"Innerhalb des Kontexts\")\n```\n\nBereit, der Wächter der Ressourcen zu werden?"
+        },
+        "duration": {
+          "fr": "20 minutes",
+          "en": "20 minutes",
+          "es": "20 minutos",
+          "de": "20 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée un context manager CompteurMagique qui compte le nombre de fois qu'il est utilisé. Il doit afficher 'Démarrage du compteur magique' à l'entrée et 'Compteur magique utilisé X fois' à la sortie.",
+        "en": "Create a MagicCounter context manager that counts how many times it's used. It should display 'Starting magic counter' on entry and 'Magic counter used X times' on exit.",
+        "es": "Crea un context manager ContadorMágico que cuente cuántas veces se usa. Debe mostrar 'Iniciando contador mágico' al entrar y 'Contador mágico usado X veces' al salir.",
+        "de": "Erstelle einen MagicCounter Kontextmanager, der zählt wie oft er verwendet wird. Er sollte 'Starte magischen Zähler' beim Betreten und 'Magischer Zähler X mal verwendet' beim Verlassen anzeigen."
+      },
+      "starter": "class CompteurMagique:\n    compteur = 0  # Variable de classe\n    \n    def __enter__(self):\n        CompteurMagique.compteur += 1\n        print(\"Démarrage du compteur magique\")\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(f\"Compteur magique utilisé {CompteurMagique.compteur} fois\")\n        return False\n\n# Test\nwith CompteurMagique():\n    print(\"Première utilisation\")\n\nwith CompteurMagique():\n    print(\"Deuxième utilisation\")",
+      "solution_explanation": {
+        "fr": "Le context manager utilise une variable de classe compteur qui persiste entre les utilisations. Chaque appel à __enter__ incrémente le compteur et __exit__ affiche le total. C'est parfait pour suivre l'utilisation !",
+        "en": "The context manager uses a class variable counter that persists between uses. Each call to __enter__ increments the counter and __exit__ displays the total. Perfect for tracking usage!",
+        "es": "¡El context manager usa una variable de clase contador que persiste entre usos. Cada llamada a __enter__ incrementa el contador y __exit__ muestra el total. Perfecto para seguir el uso!",
+        "de": "Der Kontextmanager verwendet eine Klassenvariable counter, die zwischen den Verwendungen bestehen bleibt. Jeder Aufruf von __enter__ inkrementiert den Zähler und __exit__ zeigt die Gesamtsumme an. Perfekt zur Verfolgung der Nutzung!"
+      },
+      "tests": [
+        "CompteurMagique.compteur = 0  # Reset\nwith CompteurMagique():\n    pass\nassert CompteurMagique.compteur == 1",
+        "CompteurMagique.compteur = 0\nwith CompteurMagique():\n    pass\nwith CompteurMagique():\n    pass\nassert CompteurMagique.compteur == 2",
+        "CompteurMagique.compteur = 5\nwith CompteurMagique():\n    assert CompteurMagique.compteur == 6\nassert CompteurMagique.compteur == 6"
+      ],
+      "hints": {
+        "fr": [
+          "Utilise une variable de classe pour le compteur",
+          "__enter__ incrémente le compteur et affiche le message de démarrage",
+          "__exit__ affiche le message final avec le compteur",
+          "Le compteur persiste entre les utilisations"
+        ],
+        "en": [
+          "Use a class variable for the counter",
+          "__enter__ increments counter and displays start message",
+          "__exit__ displays final message with counter",
+          "Counter persists between uses"
+        ],
+        "es": [
+          "Usa una variable de clase para el contador",
+          "__enter__ incrementa el contador y muestra mensaje de inicio",
+          "__exit__ muestra mensaje final con contador",
+          "El contador persiste entre usos"
+        ],
+        "de": [
+          "Verwende eine Klassenvariable für den Zähler",
+          "__enter__ inkrementiert Zähler und zeigt Startnachricht",
+          "__exit__ zeigt Endnachricht mit Zähler",
+          "Zähler bleibt zwischen Verwendungen bestehen"
+        ]
+      }
+    },
+    {
+      "id": "05-expert-metaprogramming",
+      "title": {
+        "fr": "La Magie Suprême - Métaprogrammation",
+        "en": "The Supreme Magic - Metaprogramming",
+        "es": "La Magia Suprema - Metaprogramación",
+        "de": "Die oberste Magie - Metaprogrammierung"
+      },
+      "stars": 5,
+      "lesson": {
+        "title": {
+          "fr": "Leçon : Métaprogrammation - Code qui écrit du Code",
+          "en": "Lesson: Metaprogramming - Code that Writes Code",
+          "es": "Lección: Metaprogramación - Código que escribe Código",
+          "de": "Lektion: Metaprogrammierung - Code, der Code schreibt"
+        },
+        "content": {
+          "fr": "La métaprogrammation en Python est la magie suprême qui permet à ton code d'écrire ou de modifier d'autres code !\n\n**Concepts avancés :**\n- **Métaclasses** : Classes qui créent d'autres classes\n- **Introspection** : Code qui examine lui-même\n- **Modification dynamique** : Changer le comportement à l'exécution\n- **Génération de code** : Créer automatiquement des fonctions/classes\n\n**Création dynamique de classes :**\n```python\n# Créer une classe dynamiquement\nGuerrier = type('Guerrier', (object,), {\n    'vie': 100,\n    'force': 15,\n    'attaquer': lambda self: f\"Attaque avec {self.force} de force!\"\n})\n\nguerrier = Guerrier()\nprint(guerrier.attaquer())\n```\n\n**Introspection avec type() et dir() :**\n```python\nclass Personnage:\n    def __init__(self, nom):\n        self.nom = nom\n\np = Personnage(\"Alice\")\nprint(type(p))           # <class '__main__.Personnage'>\nprint(dir(p))            # Liste des attributs et méthodes\nprint(hasattr(p, 'nom'))  # True\n```\n\nPrêt à maîtriser la magie suprême ?",
+          "en": "Metaprogramming in Python is the supreme magic that allows your code to write or modify other code!\n\n**Advanced concepts:**\n- **Metaclasses**: Classes that create other classes\n- **Introspection**: Code that examines itself\n- **Dynamic modification**: Change behavior at runtime\n- **Code generation**: Automatically create functions/classes\n\n**Dynamic class creation:**\n```python\n# Create a class dynamically\nWarrior = type('Warrior', (object,), {\n    'health': 100,\n    'strength': 15,\n    'attack': lambda self: f\"Attack with {self.strength} strength!\"\n})\n\nwarrior = Warrior()\nprint(warrior.attack())\n```\n\n**Introspection with type() and dir():**\n```python\nclass Character:\n    def __init__(self, name):\n        self.name = name\n\nc = Character(\"Alice\")\nprint(type(c))           # <class '__main__.Character'>\nprint(dir(c))            # List of attributes and methods\nprint(hasattr(c, 'name'))  # True\n```\n\nReady to master the supreme magic?",
+          "es": "La metaprogramación en Python es la magia suprema que permite a tu código escribir o modificar otro código!\n\n**Conceptos avanzados:**\n- **Metaclases**: Clases que crean otras clases\n- **Introspección**: Código que se examina a sí mismo\n- **Modificación dinámica**: Cambiar comportamiento en tiempo de ejecución\n- **Generación de código**: Crear automáticamente funciones/clases\n\n**Creación dinámica de clases:**\n```python\n# Crear una clase dinámicamente\nGuerrero = type('Guerrero', (object,), {\n    'vida': 100,\n    'fuerza': 15,\n    'atacar': lambda self: f\"¡Ataca con {self.fuerza} de fuerza!\"\n})\n\nguerrero = Guerrier()\nprint(guerrero.atacar())\n```\n\n**Introspección con type() y dir():**\n```python\nclass Personaje:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\np = Personaje(\"Alicia\")\nprint(type(p))           # <class '__main__.Personaje'>\nprint(dir(p))            # Lista de atributos y métodos\nprint(hasattr(p, 'nombre'))  # True\n```\n\n¿Listo para dominar la magia suprema?",
+          "de": "Metaprogrammierung in Python ist die oberste Magie, die es deinem Code ermöglicht, anderen Code zu schreiben oder zu modifizieren!\n\n**Fortschrittene Konzepte:**\n- **Metaklassen**: Klassen, die andere Klassen erstellen\n- **Introspektion**: Code, der sich selbst untersucht\n- **Dynamische Modifikation**: Verhalten zur Laufzeit ändern\n- **Code-Generierung**: Automatisch Funktionen/Klassen erstellen\n\n**Dynamische Klassenerstellung:**\n```python\n# Eine Klasse dynamisch erstellen\nKrieger = type('Krieger', (object,), {\n    'gesundheit': 100,\n    'staerke': 15,\n    'angreifen': lambda self: f\"Greift mit {self.staerke} Staerke!\"\n})\n\nkrieger = Krieger()\nprint(krieger.angreifen())\n```\n\n**Introspektion mit type() und dir():**\n```python\nclass Charakter:\n    def __init__(self, name):\n        self.name = name\n\nc = Charakter(\"Alice\")\nprint(type(c))           # <class '__main__.Charakter'>\nprint(dir(c))            # Liste der Attribute und Methoden\nprint(hasattr(c, 'name'))  # True\n```\n\nBereit, die oberste Magie zu meistern?"
+        },
+        "duration": {
+          "fr": "25 minutes",
+          "en": "25 minutes",
+          "es": "25 minutos",
+          "de": "25 Minuten"
+        }
+      },
+      "prompt": {
+        "fr": "Crée une fonction cree_classe_automatique(nom, methodes) qui utilise type() pour créer dynamiquement une classe avec le nom donné et les méthodes spécifiées. Ex: cree_classe_automatique('Robot', {'parler': lambda self: 'Beep boop!'})",
+        "en": "Create a function create_class_auto(name, methods) that uses type() to dynamically create a class with the given name and specified methods. Ex: create_class_auto('Robot', {'speak': lambda self: 'Beep boop!'})",
+        "es": "Crea una función crear_clase_automatica(nombre, metodos) que use type() para crear dinámicamente una clase con el nombre dado y métodos especificados. Ej: crear_clase_automatica('Robot', {'hablar': lambda self: 'Beep boop!'})",
+        "de": "Erstelle eine funktion erstelle_klasse_automatisch(name, methoden), die type() verwendet, um dynamisch eine Klasse mit dem gegebenen Namen und den angegebenen Methoden zu erstellen. ZB: erstelle_klasse_automatisch('Robot', {'sprechen': lambda self: 'Beep boop!'})"
+      },
+      "starter": "def cree_classe_automatique(nom, methodes):\n    return type(nom, (object,), methodes)\n\n# Test\nRobot = cree_classe_automatique('Robot', {\n    'parler': lambda self: 'Beep boop!',\n    'bouger': lambda self: 'Le robot avance'\n})\n\nrobot = Robot()\nprint(robot.parler())\nprint(robot.bouger())",
+      "solution_explanation": {
+        "fr": "La fonction type() est la fabrique de classes ultime ! type('Nom', (classes_parentes,), {attributs}) crée une nouvelle classe. C'est comme avoir une usine qui peut fabriquer n'importe quel type d'objet à la demande !",
+        "en": "The type() function is the ultimate class factory! type('Name', (parent_classes,), {attributes}) creates a new class. It's like having a factory that can manufacture any type of object on demand!",
+        "es": "¡La función type() es la fábrica de clases definitiva! type('Nombre', (clases_padre,), {atributos}) crea una nueva clase. Es como tener una fábrica que puede fabricar cualquier tipo de objeto bajo demanda!",
+        "de": "Die type() Funktion ist die ultimative Klassenfabrik! type('Name', (eltern_klassen,), {attribute}) erstellt eine neue Klasse. Es ist wie eine Fabrik zu haben, die jeden Objekttyp auf Anfrage herstellen kann!"
+      },
+      "tests": [
+        "Robot = cree_classe_automatique('Robot', {'parler': lambda self: 'Beep!'})\nrobot = Robot()\nassert robot.parler() == 'Beep!'\nassert robot.__class__.__name__ == 'Robot'",
+        "Animal = cree_classe_automatique('Animal', {\n    'crier': lambda self: 'Miaou!',\n    'dormir': lambda self: 'Zzz'\n})\nanimal = Animal()\nassert animal.crier() == 'Miaou!'\nassert animal.dormir() == 'Zzz'",
+        "Voiture = cree_classe_automatique('Voiture', {'vitesse': 0})\nvoiture = Voiture()\nassert hasattr(voiture, 'vitesse')\nassert voiture.vitesse == 0"
+      ],
+      "hints": {
+        "fr": [
+          "type() prend 3 arguments : nom, tuple des classes parentes, dictionnaire des attributs",
+          "Le paramètre methodes est un dictionnaire {nom_methode: fonction_lambda}",
+          "Les méthodes lambda prennent self comme premier paramètre",
+          "La fonction retourne la nouvelle classe créée"
+        ],
+        "en": [
+          "type() takes 3 arguments: name, tuple of parent classes, dictionary of attributes",
+          "The methods parameter is a dictionary {method_name: lambda_function}",
+          "Lambda methods take self as first parameter",
+          "Function returns the newly created class"
+        ],
+        "es": [
+          "type() toma 3 argumentos: nombre, tupla de clases padre, diccionario de atributos",
+          "El parámetro métodos es un diccionario {nombre_metodo: función_lambda}",
+          "Los métodos lambda toman self como primer parámetro",
+          "La función retorna la nueva clase creada"
+        ],
+        "de": [
+          "type() nimmt 3 Argumente: Name, Tuple der Elternklassen, Dictionary der Attribute",
+          "Der methoden Parameter ist ein Dictionary {methoden_name: lambda_funktion}",
+          "Lambda-Methoden nehmen self als ersten Parameter",
+          "Funktion gibt die neu erstellte Klasse zurück"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "id": "python-expert",
+    "title": {
+      "fr": "Python Expert - Maître du Code",
+      "en": "Python Expert - Code Master",
+      "es": "Python Experto - Maestro del Código",
+      "de": "Python Experte - Meister des Codes"
+    },
+    "description": {
+      "fr": "Deviens un véritable maître de Python avec des concepts avancés : décorateurs, programmation orientée objet, manipulation de données complexes et algorithmes puissants !",
+      "en": "Become a true Python master with advanced concepts: decorators, object-oriented programming, complex data manipulation and powerful algorithms!",
+      "es": "¡Conviértete en un verdadero maestro de Python con conceptos avanzados: decoradores, programación orientada a objetos, manipulación de datos complejos y algoritmos poderosos!",
+      "de": "Werde ein wahrer Python-Meister mit fortgeschrittenen Konzepten: Dekoratoren, objektorientierte Programmierung, komplexe Datenmanipulation und leistungsstarke Algorithmen!"
+    },
+    "level": "expert",
+    "estimated_hours": 20,
+    "author": {
+      "name": "Capitaine Expert",
+      "email": "expert@capitaine-python.com",
+      "website": "https://capitaine-python.com",
+      "github": "https://github.com/capitaine-python"
+    },
+    "version": "1.0.0",
+    "created_date": "2025-10-11T16:00:00Z",
+    "updated_date": "2025-10-11T16:00:00Z",
+    "age_restriction": {
+      "minimum": 16,
+      "recommended": 18
+    },
+    "prerequisites": [
+      "python-basics",
+      "python-adventure"
+    ],
+    "learning_objectives": [
+      "Maîtriser les décorateurs",
+      "Comprendre l'héritage et le polymorphisme",
+      "Utiliser les générateurs efficacement",
+      "Implémenter les context managers",
+      "Découvrir la métaprogrammation"
+    ],
+    "skills_gained": [
+      "Programmation avancée",
+      "Architecture logicielle",
+      "Optimisation de performance",
+      "Design patterns"
+    ],
+    "tags": [
+      "advanced",
+      "decorators",
+      "oop",
+      "generators",
+      "metaprogramming"
+    ],
+    "difficulty_rating": 5,
+    "rating": 4.8,
+    "reviews_count": 127,
+    "completions": 89,
+    "certificate_available": true,
+    "github_url": "https://github.com/capitaine-python/python-expert",
+    "documentation_url": "https://docs.capitaine-python.com/python-expert",
+    "forum_url": "https://forum.capitaine-python.com/python-expert",
+    "icon": {
+      "data": "placeholder_icon_base64",
+      "format": "base64",
+      "mime_type": "image/svg+xml"
+    },
+    "banner": {
+      "data": "placeholder_banner_base64",
+      "format": "base64",
+      "mime_type": "image/svg+xml"
+    },
+    "images": {
+      "icon": {
+        "type": "svg+xml",
+        "encoding": "base64",
+        "data": "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icHl0aG9uR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzc3NmFiO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkQ0M0I7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMwIiBmaWxsPSJ1cmwoI3B5dGhvbkdyYWRpZW50KSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjMyIiB5PSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+UHk8L3RleHQ+CiAgICA8dGV4dCB4PSIzMiIgeT0iMzYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5FeHBlcnQ8L3RleHQ+CiAgICA8cGF0aCBkPSJNMTUgNDAgUTMyIDQ4IDQ5IDQwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjIwIiBjeT0iNDIiIHI9IjIiIGZpbGw9IndoaXRlIi8+CiAgICA8Y2lyY2xlIGN4PSI0NCIgY3k9IjQyIiByPSIyIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=",
+        "generated": true,
+        "theme": "python"
+      },
+      "banner": {
+        "type": "svg+xml",
+        "encoding": "base64",
+        "data": "PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDgwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJhbm5lckdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzM3NzZhYjtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzNDk4ZGI7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzJFQ0M3MTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxwYXR0ZXJuIGlkPSJjb2RlUGF0dGVybiIgeD0iMCIgeT0iMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgICAgICAgPHRleHQgeD0iMiIgeT0iMTUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI2ZmZmZmZjIwIj5kZWY8L3RleHQ+CiAgICAgICAgICAgIDx0ZXh0IHg9IjIwIiB5PSIxNSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjZmZmZmZmMjAiPigpPC90ZXh0PgogICAgICAgIDwvcGF0dGVybj4KICAgIDwvZGVmcz4KICAgIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjAwIiBmaWxsPSJ1cmwoI2Jhbm5lckdyYWRpZW50KSIvPgogICAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjY29kZVBhdHRlcm4pIi8+CiAgICA8dGV4dCB4PSI0MDAiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+TWHDrnRyZSBkdSBDb2RlPC90ZXh0PgogICAgPHRleHQgeD0iNDAwIiB5PSI5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmZWUiPk1hw650cmlzZXogbGVzIGNvbmNlcHRzIGF2YW5jw6lzIGRlIGxhIHByb2dyYW1tYXRpb248L3RleHQ+CgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAsIDEyMCkiPgogICAgICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSIyNSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiPkBkZWNvcmF0b3I8L3RleHQ+CiAgICAgICAgPHRleHQgeD0iNjAiIHk9IjQwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmZjYyI+bWV0YTwvdGV4dD4KICAgICAgICA8dGV4dCB4PSI2MCIgeT0iNTIiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZmNjIj5hc3luYzwvdGV4dD4KICAgIDwvZz4KCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDAsIDEyMCkiPgogICAgICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSIyNSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiPmNsYXNzPC90ZXh0PgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSI0MCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmY2MiPk9PUDwvdGV4dD4KICAgICAgICA8dGV4dCB4PSI2MCIgeT0iNTIiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZmNjIj5pbmhlcml0PC90ZXh0PgogICAgPC9nPgoKICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1MCwgMTIwKSI+CiAgICAgICAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9IiNmZmZmZmYyMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAgICAgPHRleHQgeD0iNjAiIHk9IjI1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+eWllbGQ8L3RleHQ+CiAgICAgICAgPHRleHQgeD0iNjAiIHk9IjQwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmZjYyI+Z2VuPC90ZXh0PgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSI1MiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmY2MiPmFzeW5jPC90ZXh0PgogICAgPC9nPgoKICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwMCwgMTIwKSI+CiAgICAgICAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9IiNmZmZmZmYyMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICAgICAgPHRleHQgeD0iNjAiIHk9IjI1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+d2l0aDwvdGV4dD4KICAgICAgICA8dGV4dCB4PSI2MCIgeT0iNDAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZmNjIj5jb250ZXh0PC90ZXh0PgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSI1MiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmY2MiPm1hbmFnZXI8L3RleHQ+CiAgICA8L2c+CgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjUwLCAxMjApIj4KICAgICAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiByeD0iOCIgZmlsbD0iI2ZmZmZmZjIwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgICA8dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5fXzwvdGV4dD4KICAgICAgICA8dGV4dCB4PSI2MCIgeT0iNDAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZmNjIj5tZXRhPC90ZXh0PgogICAgICAgIDx0ZXh0IHg9IjYwIiB5PSI1MiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmY2MiPmNsYXNzPC90ZXh0PgogICAgPC9nPgo8L3N2Zz4=",
+        "generated": true,
+        "theme": "python"
+      }
+    }
+  }
+}
