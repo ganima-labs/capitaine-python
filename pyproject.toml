@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capitaine-python"
+version = "1.0.0"
+description = "Plateforme d'apprentissage interactif pour Python"
+authors = [{name = "Capitaine Python Team"}]
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.5.0",
+    "sqlite-utils>=3.35.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.12.0",
+    "pytest-xdist>=3.3.0",
+    "httpx>=0.25.0",
+    "aiofiles>=23.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["app/backend"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--strict-config",
+    "--disable-warnings",
+    "--cov=app.backend",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--cov-fail-under=100",
+    "--color=yes",
+    "--durations=10"
+]
+markers = [
+    "unit: Tests unitaires",
+    "integration: Tests d'intégration",
+    "security: Tests de sécurité",
+    "slow: Tests lents",
+    "external: Tests nécessitant des ressources externes"
+]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["app/backend"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/env/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+show_missing = true
+precision = 2
+fail_under = 100
+
+[tool.coverage.html]
+directory = "htmlcov"

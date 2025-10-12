@@ -1,0 +1,93 @@
+{
+  "test_date": "2025-10-12 17:08:12",
+  "child_name": "Léo",
+  "child_age": "9 ans",
+  "summary": {
+    "total_exercises_tested": 5,
+    "successful_exercises": 0,
+    "success_rate": 0.0
+  },
+  "details": [
+    {
+      "success": false,
+      "error": "Test failed"
+    },
+    {
+      "success": false,
+      "error": "Test failed"
+    },
+    {
+      "success": false,
+      "error": "Interactive test failed"
+    },
+    {
+      "success": false,
+      "error": "Test failed"
+    },
+    {
+      "success": false,
+      "error": "Test failed"
+    }
+  ],
+  "progress_log": [
+    "[17:08:10] ✅ API santé vérifiée - healthy",
+    "[17:08:10] 🎨 Interface accessible - Title: True, Meta: True, Content: True",
+    "[17:08:10]   ✅ Interface adaptée aux enfants",
+    "[17:08:10] 📚 Cours disponibles - 3 cours trouvés",
+    "[17:08:10]   • python-expert - Python Expert - Maître du Code",
+    "[17:08:10]   • python-basics - Python les Bases - Édition Enrichie",
+    "[17:08:10]   • python-adventure - Aventure Python",
+    "[17:08:10] 🎯 Cours choisi - python-basics - parfait pour débutant",
+    "[17:08:10] 📝 Exercices chargés - 13 exercices dans python-basics",
+    "[17:08:10] 🎮 DÉBUT DES TESTS D'EXERCICES - 5 exercices sélectionnés",
+    "[17:08:10] \n--- Exercice 1/5 ---",
+    "[17:08:10] 🌟 Exercice 01-print - Fais parler l'ordi (⭐)",
+    "[17:08:10]   📖 Prompt - Affiche exactement: Salut Capitaine Python !",
+    "[17:08:10]   💻 Type - Exercice simple (sans input)",
+    "[17:08:10]   📝 Code de départ - print(\"Salut Capitaine Python !\")",
+    "[17:08:10]   ❌ Erreur exécution - Status: 422",
+    "[17:08:10]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:10]   ❌ Erreur validation - Status: 422",
+    "[17:08:10]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:10] \n--- Exercice 2/5 ---",
+    "[17:08:10] 🌟 Exercice 02-variables - Trésor dans une variable (⭐)",
+    "[17:08:10]   📖 Prompt - Crée une variable message avec 'Bonjour Hugo' et affiche-la.",
+    "[17:08:10]   💻 Type - Exercice simple (sans input)",
+    "[17:08:10]   📝 Code de départ - message = \"Bonjour Hugo\"\nprint(message)",
+    "[17:08:10]   ❌ Erreur exécution - Status: 422",
+    "[17:08:10]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:10]   ❌ Erreur validation - Status: 422",
+    "[17:08:10]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:11] \n--- Exercice 3/5 ---",
+    "[17:08:11] 🌟 Exercice 03-conditions - Feu rouge/vert (⭐⭐)",
+    "[17:08:11]   📖 Prompt - Lis un mot (rouge/vert) et affiche 'STOP' si rouge, 'GO' si vert.",
+    "[17:08:11]   💻 Type - Exercice interactif (avec input)",
+    "[17:08:11]   📝 Code de départ - couleur = input()\nif couleur == \"rouge\":\n    print...",
+    "[17:08:11]   ❌ Erreur test interactif - Status: 422",
+    "[17:08:11]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:11]   ❌ Erreur validation - Status: 422",
+    "[17:08:11]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:11] \n--- Exercice 4/5 ---",
+    "[17:08:11] 🌟 Exercice 04-boucle-for - Compte 1 à 5 (⭐)",
+    "[17:08:11]   📖 Prompt - Affiche les nombres de 1 à 5 chacun sur sa ligne.",
+    "[17:08:11]   💻 Type - Exercice simple (sans input)",
+    "[17:08:11]   📝 Code de départ - for i in range(1, 6):\n    print(i)",
+    "[17:08:11]   ❌ Erreur exécution - Status: 422",
+    "[17:08:11]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:11]   ❌ Erreur validation - Status: 422",
+    "[17:08:11]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:12] \n--- Exercice 5/5 ---",
+    "[17:08:12] 🌟 Exercice 05-fonction-bonjour - Dis Bonjour (⭐⭐)",
+    "[17:08:12]   📖 Prompt - Écris une fonction bonjour(nom) qui renvoie 'Bonjour <nom>' (sans l'afficher).",
+    "[17:08:12]   💻 Type - Exercice simple (sans input)",
+    "[17:08:12]   📝 Code de départ - def bonjour(nom):\n    return 'Bonjour ' + nom",
+    "[17:08:12]   ❌ Erreur exécution - Status: 422",
+    "[17:08:12]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:12]   ❌ Erreur validation - Status: 422",
+    "[17:08:12]   📝 Détails - {\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"learner\"],\"msg\":\"Value error, Invalid learner name format\",\"input\":\"Léo\",\"ctx\":{\"error\":{}}}]}",
+    "[17:08:12] \n--- SUIVI DE PROGRESSION ---",
+    "[17:08:12] ❌ Erreur récupération progression",
+    "[17:08:12] \n📊 RÉSULTATS FINAUX - 0/5 exercices réussis",
+    "[17:08:12] ⚠️ TEST GLOBAL PARTIEL - Des corrections sont nécessaires"
+  ]
+}

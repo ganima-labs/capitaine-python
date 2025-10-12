@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Refactoring formatTheoryContent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-white p-8">
+    <h1 class="text-2xl font-bold mb-6">🧪 Test de Refactoring - formatTheoryContent</h1>
+
+    <div id="test-results" class="mb-6"></div>
+
+    <div class="space-y-6">
+        <div class="bg-gray-700 rounded-lg p-4">
+            <h2 class="text-lg font-semibold mb-3">📚 Théorie de Test</h2>
+            <div id="theory-output" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation de getLocalizedValue
+        function getLocalizedValue(value) {
+            if (typeof value === 'string') return value;
+            if (typeof value === 'object' && value.fr) return value.fr;
+            return value;
+        }
+
+        // Simulation de t() (traduction)
+        function t(key) {
+            const translations = {
+                'theory.details': 'Détails',
+                'theory.examples': 'Exemples',
+                'theory.best_practices': 'Bonnes pratiques',
+                'errors.theory_content': 'Erreur lors de l\'affichage du contenu théorique'
+            };
+            return translations[key] || key;
+        }
+
+        // Configuration des sections (copiée du refactoring)
+        const THEORY_SECTION_CONFIG = {
+            concept: {
+                icon: '📚',
+                titleClass: 'text-lg font-semibold text-blue-300 mb-3',
+                isTitle: true
+            },
+            details: {
+                icon: '📖',
+                titleKey: 'theory.details',
+                titleClass: 'text-sm font-medium text-gray-300 mb-2',
+                containerClass: 'mb-4',
+                listClass: 'list-disc list-inside space-y-1 text-sm text-gray-300 ml-4',
+                type: 'list'
+            },
+            examples: {
+                icon: '💡',
+                titleKey: 'theory.examples',
+                titleClass: 'text-sm font-medium text-green-300 mb-2',
+                containerClass: 'mb-4',
+                itemClass: 'bg-gray-900 p-3 rounded border border-gray-700',
+                codeClass: 'text-sm font-mono text-green-400',
+                type: 'code'
+            },
+            best_practices: {
+                icon: '⭐',
+                titleKey: 'theory.best_practices',
+                titleClass: 'text-sm font-medium text-amber-300 mb-2',
+                containerClass: 'mb-4',
+                listClass: 'list-disc list-inside space-y-1 text-sm text-amber-200 ml-4',
+                type: 'list'
+            }
+        };
+
+        // Fonctions du refactoring
+        function createSectionTitle(text, config) {
+            if (!text || !config) return '';
+
+            if (config.isTitle) {
+                return `<h4 class="${config.titleClass}">${escapeHtml(text)}</h4>`;
+            }
+
+            const titleText = config.titleKey ? t(config.titleKey) : text;
+            return `<h5 class="${config.titleClass}">${config.icon} ${titleText} :</h5>`;
+        }
+
+        function createListContent(items, config) {
+            if (!Array.isArray(items) || items.length === 0 || !config) return '';
+
+            const itemsHtml = items
+                .map(item => `<li>${escapeHtml(item)}</li>`)
+                .join('');
+
+            return `<ul class="${config.listClass}">${itemsHtml}</ul>`;
+        }
+
+        function createCodeBlocks(items, config) {
+            if (!Array.isArray(items) || items.length === 0 || !config) return '';
+
+            const blocksHtml = items
+                .map(item => `
+                    <div class="${config.itemClass}">
+                        <code class="${config.codeClass}">${escapeHtml(item)}</code>
+                    </div>
+                `)
+                .join('');
+
+            return `<div class="space-y-2">${blocksHtml}</div>`;
+        }
+
+        function createSectionContainer(content, config) {
+            if (!content || !config || !config.containerClass) return content;
+            return `<div class="${config.containerClass}">${content}</div>`;
+        }
+
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function generateSectionContent(key, data, config) {
+            const value = getLocalizedValue(data);
+            if (!value || !config) return '';
+
+            const title = createSectionTitle(
+                config.isTitle ? value : (key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')),
+                config
+            );
+
+            let content = '';
+            if (config.type === 'list') {
+                content = createListContent(value, config);
+            } else if (config.type === 'code') {
+                content = createCodeBlocks(value, config);
+            }
+
+            const section = title + content;
+            return createSectionContainer(section, config);
+        }
+
+        // Version refactorisée de formatTheoryContent
+        function formatTheoryContent(theory) {
+            const theoryData = getLocalizedValue(theory);
+
+            if (!theoryData || typeof theoryData !== 'object') {
+                console.warn('formatTheoryContent: Invalid theory data provided');
+                return '';
+            }
+
+            try {
+                const sections = [];
+
+                // Générer chaque section dans l'ordre configuré
+                for (const [key, config] of Object.entries(THEORY_SECTION_CONFIG)) {
+                    if (theoryData[key]) {
+                        const sectionHtml = generateSectionContent(key, theoryData[key], config);
+                        if (sectionHtml) {
+                            sections.push(sectionHtml);
+                        }
+                    }
+                }
+
+                return sections.join('');
+
+            } catch (error) {
+                console.error('formatTheoryContent: Error generating content:', error);
+                return `<div class="text-red-400">${t('errors.theory_content')}</div>`;
+            }
+        }
+
+        // Tests de validation
+        function runTests() {
+            const results = document.getElementById('test-results');
+            const output = document.getElementById('theory-output');
+
+            let testsPassed = 0;
+            let testsTotal = 0;
+            let testResults = [];
+
+            function addTest(name, passed, details = '') {
+                testsTotal++;
+                if (passed) testsPassed++;
+
+                const status = passed ? '✅' : '❌';
+                testResults.push(`<div class="${passed ? 'text-green-400' : 'text-red-400'}">${status} ${name}${details ? ': ' + details : ''}</div>`);
+            }
+
+            // Test 1: Données valides
+            const validTheory = {
+                fr: {
+                    concept: 'Les variables en Python',
+                    details: [
+                        'Une variable est un conteneur pour stocker des données',
+                        'Python est typé dynamiquement'
+                    ],
+                    examples: [
+                        'x = 10',
+                        'nom = "Alice"'
+                    ],
+                    best_practices: [
+                        'Utiliser des noms explicites',
+                        'Suivre PEP 8'
+                    ]
+                }
+            };
+
+            try {
+                const result1 = formatTheoryContent(validTheory);
+                const passed1 = result1.includes('Les variables en Python') &&
+                              result1.includes('text-blue-300') &&
+                              result1.includes('x = 10');
+                addTest('Théorie valide', passed1, passed1 ? 'HTML généré correctement' : 'HTML incomplet');
+                if (passed1) output.innerHTML = result1;
+            } catch (e) {
+                addTest('Théorie valide', false, e.message);
+            }
+
+            // Test 2: Données vides
+            try {
+                const result2 = formatTheoryContent({});
+                const passed2 = result2 === '';
+                addTest('Données vides', passed2, passed2 ? 'Retour vide comme attendu' : 'Devrait retourner vide');
+            } catch (e) {
+                addTest('Données vides', false, e.message);
+            }
+
+            // Test 3: Données null
+            try {
+                const result3 = formatTheoryContent(null);
+                const passed3 = result3 === '';
+                addTest('Données null', passed3, passed3 ? 'Gère correctement null' : 'Devrait gérer null');
+            } catch (e) {
+                addTest('Données null', false, e.message);
+            }
+
+            // Test 4: Sécurité - injection HTML
+            const dangerousTheory = {
+                fr: {
+                    concept: '<script>alert("xss")</script>',
+                    details: ['<img src=x onerror=alert("xss")>'],
+                    examples: ['print("<script>")'],
+                    best_practices: ['Échapper le HTML']
+                }
+            };
+
+            try {
+                const result4 = formatTheoryContent(dangerousTheory);
+                const escaped = !result4.includes('<script>') &&
+                               result4.includes('&lt;script&gt;');
+                addTest('Sécurité HTML', escaped, escaped ? 'HTML échappé correctement' : 'HTML non échappé');
+            } catch (e) {
+                addTest('Sécurité HTML', false, e.message);
+            }
+
+            // Test 5: Section manquante
+            const partialTheory = {
+                fr: {
+                    concept: 'Concept seulement',
+                    details: ['Un détail']
+                    // Pas d'exemples ni de best_practices
+                }
+            };
+
+            try {
+                const result5 = formatTheoryContent(partialTheory);
+                const passed5 = result5.includes('Concept seulement') &&
+                              result5.includes('Un détail') &&
+                              !result5.includes('Exemples');
+                addTest('Section partielle', passed5, passed5 ? 'Gère les sections manquantes' : 'Ne devrait pas afficher les sections manquantes');
+            } catch (e) {
+                addTest('Section partielle', false, e.message);
+            }
+
+            // Afficher les résultats
+            const successRate = (testsPassed / testsTotal * 100).toFixed(1);
+            results.innerHTML = `
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-3">📊 Résultats des Tests</h2>
+                    <div class="text-2xl font-bold ${testsPassed === testsTotal ? 'text-green-400' : 'text-orange-400'} mb-3">
+                        ${testsPassed}/${testsTotal} tests passés (${successRate}%)
+                    </div>
+                    <div class="space-y-1">
+                        ${testResults.join('')}
+                    </div>
+                    ${testsPassed === testsTotal ?
+                        '<div class="mt-4 text-green-400 font-semibold">🎉 REFACTORING VALIDÉ!</div>' :
+                        '<div class="mt-4 text-orange-400 font-semibold">⚠️ Certains tests ont échoué</div>'
+                    }
+                </div>
+            `;
+        }
+
+        // Exécuter les tests au chargement
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>

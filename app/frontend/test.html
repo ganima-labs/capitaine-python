@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Capitaine Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <h1 class="text-3xl font-bold mb-6">🧪 Test de diagnostic</h1>
+
+    <div id="course-list" class="bg-gray-800 p-4 rounded-lg mb-6">
+        <h2 class="text-xl font-semibold mb-4">Cours disponibles</h2>
+        <div id="course-content">Chargement...</div>
+    </div>
+
+    <div id="exercises-container" class="bg-gray-800 p-4 rounded-lg" style="display: none;">
+        <h2 class="text-xl font-semibold mb-4">Exercices</h2>
+        <div id="exercises-content"></div>
+    </div>
+
+    <div id="exercise-details" class="bg-gray-800 p-4 rounded-lg mt-6" style="display: none;">
+        <h2 class="text-xl font-semibold mb-4">Détails de l'exercice</h2>
+        <div id="exercise-content"></div>
+    </div>
+
+    <script>
+        console.log("🚀 Page de test chargée");
+
+        async function testAPI() {
+            console.log("🔍 Test API...");
+
+            try {
+                // Test 1: API Courses
+                const coursesResponse = await fetch('/api/courses');
+                const courses = await coursesResponse.json();
+                console.log("✅ Cours:", courses);
+
+                const courseContent = document.getElementById('course-content');
+                courseContent.innerHTML = courses.map(course =>
+                    `<div class="mb-4 p-3 bg-gray-700 rounded cursor-pointer hover:bg-gray-600" onclick="selectCourse('${course.id}')">
+                        <h3 class="font-bold">${course.title.fr}</h3>
+                        <p class="text-sm text-gray-300">${course.description.fr}</p>
+                        <p class="text-xs text-gray-400">${course.exercise_count} exercices</p>
+                    </div>`
+                ).join('');
+
+                // Sélectionner automatiquement le premier cours
+                if (courses.length > 0) {
+                    selectCourse(courses[0].id);
+                }
+
+            } catch (error) {
+                console.error("❌ Erreur:", error);
+                document.getElementById('course-content').innerHTML = `<p class="text-red-400">Erreur: ${error.message}</p>`;
+            }
+        }
+
+        async function selectCourse(courseId) {
+            console.log("🎯 Sélection cours:", courseId);
+
+            try {
+                const exercisesResponse = await fetch(`/api/courses/${courseId}/exercises`);
+                const exercises = await exercisesResponse.json();
+                console.log("✅ Exercices:", exercises);
+
+                // Afficher la section exercices
+                document.getElementById('exercises-container').style.display = 'block';
+
+                const exercisesContent = document.getElementById('exercises-content');
+                exercisesContent.innerHTML = exercises.map(exercise =>
+                    `<div class="mb-2 p-2 bg-gray-700 rounded cursor-pointer hover:bg-gray-600" onclick="selectExercise('${courseId}', '${exercise.id}')">
+                        <h4 class="font-medium">${exercise.title.fr}</h4>
+                        <p class="text-xs text-yellow-400">${'⭐'.repeat(exercise.stars)}</p>
+                    </div>`
+                ).join('');
+
+            } catch (error) {
+                console.error("❌ Erreur:", error);
+                document.getElementById('exercises-content').innerHTML = `<p class="text-red-400">Erreur: ${error.message}</p>`;
+            }
+        }
+
+        async function selectExercise(courseId, exerciseId) {
+            console.log("📖 Sélection exercice:", exerciseId);
+
+            try {
+                const exerciseResponse = await fetch(`/api/exercises/${exerciseId}`);
+                const exercise = await exerciseResponse.json();
+                console.log("✅ Détail exercice:", exercise);
+
+                // Afficher la section détails
+                document.getElementById('exercise-details').style.display = 'block';
+
+                const exerciseContent = document.getElementById('exercise-content');
+                exerciseContent.innerHTML = `
+                    <h3 class="font-bold text-lg mb-2">${exercise.title.fr}</h3>
+                    <p class="mb-4">${exercise.prompt.fr}</p>
+                    <div class="bg-gray-900 p-3 rounded">
+                        <h4 class="font-semibold mb-2">Code de départ:</h4>
+                        <pre class="text-sm font-mono">${exercise.starter.fr}</pre>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error("❌ Erreur:", error);
+                document.getElementById('exercise-content').innerHTML = `<p class="text-red-400">Erreur: ${error.message}</p>`;
+            }
+        }
+
+        // Démarrer le test
+        testAPI();
+    </script>
+</body>
+</html>

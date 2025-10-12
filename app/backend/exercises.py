@@ -8,7 +8,7 @@ EXERCISES = [
     "starter": 'print("Salut Capitaine Python !")',
     "solution_explanation": "Pour afficher du texte en Python, on utilise la fonction print(). Le texte doit être entre guillemets. print() affiche automatiquement un retour à la ligne après le texte.",
     "tests": [
-      "out = run_with_input('')",
+      "out = execute_code()",
       "assert out.strip() == 'Salut Capitaine Python !'"
     ],
     "hints": ["Utilise print(...)", "N'oublie pas les guillemets", "Respecte espaces et ponctuation"]
@@ -21,7 +21,7 @@ EXERCISES = [
     "starter": 'message = "Bonjour Hugo"\nprint(message)',
     "solution_explanation": "Une variable stocke une valeur. Ici, on crée la variable 'message' et on y met le texte 'Bonjour Hugo'. Ensuite, print(message) affiche le contenu de la variable. C'est comme une boîte qui contient une valeur !",
     "tests": [
-      "out = run_with_input('')",
+      "out = execute_code()",
       "assert 'Bonjour Hugo' in out"
     ],
     "hints": ["message = 'Bonjour Hugo'", "Puis print(message)"]
@@ -51,7 +51,7 @@ EXERCISES = [
     "starter": "for i in range(1, 6):\n    print(i)",
     "solution_explanation": "La boucle for répète des actions. range(1,6) génère les nombres 1,2,3,4,5. Pour chaque nombre, la boucle l'affiche avec print(i). C'est parfait pour répéter une tâche plusieurs fois !",
     "tests": [
-      "out = run_with_input('')",
+      "out = execute_code()",
       "assert out.strip().splitlines() == ['1','2','3','4','5']"
     ],
     "hints": ["range(1,6) va de 1 à 5", "print(i) dans la boucle"]

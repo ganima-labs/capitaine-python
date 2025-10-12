@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Capitaine Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <h1>Debug Capitaine Python</h1>
+
+    <div class="mb-4">
+        <button onclick="testAPI()" class="bg-blue-600 px-4 py-2 rounded">Tester API</button>
+        <button onclick="loadCourses()" class="bg-green-600 px-4 py-2 rounded ml-2">Charger Cours</button>
+        <button onclick="loadExercises()" class="bg-purple-600 px-4 py-2 rounded ml-2">Charger Exercices</button>
+    </div>
+
+    <div id="results" class="bg-gray-800 p-4 rounded min-h-[200px] font-mono text-xs">
+        Résultats...
+    </div>
+
+    <script>
+        const results = document.getElementById('results');
+
+        function log(msg) {
+            results.innerHTML += '<br>' + msg;
+        }
+
+        async function testAPI() {
+            log('🔍 Test API...');
+            try {
+                const response = await fetch('/api/courses');
+                log('✅ API répond: ' + response.status);
+                const courses = await response.json();
+                log('📚 Cours trouvés: ' + courses.length);
+                courses.forEach(c => log('- ' + c.id + ': ' + c.title.fr));
+            } catch (error) {
+                log('❌ Erreur API: ' + error.message);
+            }
+        }
+
+        async function loadCourses() {
+            log('🚀 Chargement des cours...');
+            try {
+                const courses = await fetch('/api/courses').then(r => r.json());
+                log('✅ Cours reçus: ' + courses.length);
+
+                // Afficher les exercices du premier cours
+                if (courses.length > 0) {
+                    const courseId = courses[0].id;
+                    log('📖 Chargement exercices du cours: ' + courseId);
+
+                    const exercises = await fetch(`/api/courses/${courseId}/exercises`).then(r => r.json());
+                    log('🎯 Exercices trouvés: ' + exercises.length);
+                    exercises.forEach(e => log('- ' + e.id + ': ' + e.title.fr));
+                }
+            } catch (error) {
+                log('❌ Erreur: ' + error.message);
+            }
+        }
+
+        async function loadExercises() {
+            log('🏃‍♂️ Test legacy exercices...');
+            try {
+                const exercises = await fetch('/api/exercises').then(r => r.json());
+                log('📋 Exercices legacy: ' + exercises.length);
+                exercises.forEach(e => log('- ' + e.id + ': ' + e.title.fr));
+            } catch (error) {
+                log('❌ Erreur legacy: ' + error.message);
+            }
+        }
+
+        // Test automatique au chargement
+        testAPI();
+    </script>
+</body>
+</html>

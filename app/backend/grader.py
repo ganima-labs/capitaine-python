@@ -91,6 +91,15 @@ async def build_harness_and_run(exec_url: str, student_code: str, tests: list[st
         "    finally:",
         "        sys.stdin = backup_stdin",
         "        sys.stdout = backup_stdout",
+        "def execute_code():",
+        "    backup_stdout = sys.stdout",
+        "    buf = io.StringIO()",
+        "    sys.stdout = buf",
+        "    try:",
+        "        exec(student_code, {})",
+        "        return buf.getvalue()",
+        "    finally:",
+        "        sys.stdout = backup_stdout",
         "ns = {}",
         "exec(student_code, ns)",
         tests_src,
@@ -110,3 +119,110 @@ async def build_harness_and_run(exec_url: str, student_code: str, tests: list[st
         out = await run_local_python(harness)
         stdout = out.get("stdout", "")
         return {"ok": "__ALL_TESTS_OK__" in stdout, "raw": out}
+
+
+async def run_code_with_inputs(exec_url: str, student_code: str, inputs: list[str], timeout: int = 30):
+    """
+    Exécute du code Python avec des inputs utilisateur fournis
+    """
+    # Préparer les inputs (ajouter \n à chaque input sauf le dernier)
+    prepared_inputs = []
+    for i, inp in enumerate(inputs):
+        if i < len(inputs) - 1:
+            prepared_inputs.append(inp + "\n")
+        else:
+            prepared_inputs.append(inp)
+
+    # Construire le code avec simulation d'inputs
+    input_simulation = ";\n".join([f'inputs[{i}]' for i in range(len(inputs))])
+
+    interactive_harness = [
+        "import sys, io",
+        f"student_code = {student_code!r}",
+        f"inputs = {prepared_inputs!r}",
+        "input_index = 0",
+        "",
+        "def mock_input(prompt=''):",
+        "    global input_index",
+        "    if input_index < len(inputs):",
+        "        result = inputs[input_index]",
+        "        input_index += 1",
+        "        return result",
+        "    return ''",
+        "",
+        "# Remplacer input() par notre mock",
+        "backup_input = input",
+        "input = mock_input",
+        "",
+        "# Configurer stdout pour capturer la sortie",
+        "backup_stdout = sys.stdout",
+        "buf = io.StringIO()",
+        "sys.stdout = buf",
+        "",
+        "try:",
+        "    exec(student_code, {})",
+        "    output = buf.getvalue()",
+        "except Exception as e:",
+        "    output = f'Error: {str(e)}'",
+        "finally:",
+        "    sys.stdout = backup_stdout",
+        "    input = backup_input",
+        "",
+        "print(output)",
+        "print('___INTERACTIVE_EXECUTION_COMPLETE___')"
+    ]
+
+    harness = "\n".join(interactive_harness)
+
+    try:
+        # Utiliser un timeout plus long pour les interactions
+        payload = make_runner_payload(harness)
+        payload["run_timeout"] = timeout * 1000  # Convertir en ms
+
+        async with httpx.AsyncClient(timeout=timeout + 5) as c:
+            r = await c.post(exec_url, json=payload)
+        out = r.json()
+
+        stdout = ((out.get("run") or {}).get("stdout") or "")
+
+        # Extraire la sortie de l'étudiant
+        if "___INTERACTIVE_EXECUTION_COMPLETE___" in stdout:
+            parts = stdout.split("___INTERACTIVE_EXECUTION_COMPLETE___")
+            student_output = parts[0].strip()
+            return {
+                "ok": True,
+                "output": student_output,
+                "raw": out,
+                "inputs_used": len(inputs)
+            }
+        else:
+            # Erreur d'exécution
+            return {
+                "ok": False,
+                "output": stdout.strip(),
+                "raw": out,
+                "inputs_used": len(inputs)
+            }
+
+    except Exception as e:
+        # Fallback vers l'exécution locale
+        print(f"Piston non disponible pour les inputs, utilisation du fallback local: {e}")
+        out = await run_local_python(harness, "\n".join(inputs), timeout)
+        stdout = out.get("stdout", "")
+
+        if "___INTERACTIVE_EXECUTION_COMPLETE___" in stdout:
+            parts = stdout.split("___INTERACTIVE_EXECUTION_COMPLETE___")
+            student_output = parts[0].strip()
+            return {
+                "ok": True,
+                "output": student_output,
+                "raw": out,
+                "inputs_used": len(inputs)
+            }
+        else:
+            return {
+                "ok": False,
+                "output": stdout.strip(),
+                "raw": out,
+                "inputs_used": len(inputs)
+            }

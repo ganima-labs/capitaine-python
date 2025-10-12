@@ -1,0 +1,6 @@
+{
+  "course_id": "python-basics",
+  "exercise_id": "03-conditions",
+  "code": "couleur = input()\nif couleur == \"rouge\":\n    print(\"STOP\")\nelif couleur == \"vert\":\n    print(\"GO\")",
+  "learner": "test"
+}

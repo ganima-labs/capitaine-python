@@ -52,7 +52,7 @@ class CourseManager:
         return self.courses.get(course_id)
 
     def get_course_exercises(self, course_id: str) -> List[Dict]:
-        """Retourne la liste des exercices d'un cours"""
+        """Retourne la liste des exercices d'un cours avec toutes les données nécessaires"""
         course = self.get_course(course_id)
         if not course:
             return []
@@ -61,7 +61,12 @@ class CourseManager:
             {
                 "id": ex.get("id"),
                 "title": ex.get("title"),
-                "stars": ex.get("stars", 0)
+                "stars": ex.get("stars", 0),
+                "prompt": ex.get("prompt", {}),
+                "starter": ex.get("starter", {}),
+                "theory": ex.get("theory"),
+                "hints": ex.get("hints", []),
+                "tests": ex.get("tests", [])
             }
             for ex in course.get("exercises", [])
         ]
