@@ -56,10 +56,10 @@ Capitaine Python dispose maintenant d'un mode spécialisé pour les enfants de 8
 - **📈 Progression guidée** : Parcours pédagogique adapté
 
 ### 📊 Documentation complète
-- `CHILD_MODE_IMPLEMENTATION_PLAN.md` - Roadmap 12 semaines
-- `EXERCISE_PATTERNS_GUIDE.md` - Patterns sécurité/pédagogie
-- `UI_DESIGN_PROPOSAL.md` - Design React/TypeScript
-- `MONITORING_ADMIN.md` - Monitoring Docker
+- `docs/planning/CHILD_MODE_IMPLEMENTATION_PLAN.md` - Roadmap 12 semaines
+- `docs/security/EXERCISE_PATTERNS_GUIDE.md` - Patterns sécurité/pédagogie
+- `docs/design/UI_DESIGN_PROPOSAL.md` - Design React/TypeScript
+- `docs/monitoring/MONITORING_ADMIN.md` - Monitoring Docker
 
 ## 🏗️ Architecture
 
