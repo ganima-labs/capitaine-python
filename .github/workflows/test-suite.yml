@@ -1,0 +1,188 @@
+name: Test Suite Capitaine Python
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.11, 3.12, 3.13]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov pytest-asyncio httpx fastapi uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run core unit tests
+      run: |
+        cd app/backend
+        python -m pytest test_course_manager.py test_db.py test_exercises.py -v --tb=short --cov=. --cov-report=xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./app/backend/coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  test-security:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest fastapi httpx uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run security tests
+      run: |
+        cd app/backend
+        python -m pytest test_security.py -v --tb=short
+
+  test-api:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest pytest-asyncio httpx fastapi uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run API tests
+      run: |
+        cd app/backend
+        python -m pytest test_main.py -v --tb=short
+
+  test-performance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest psutil fastapi httpx uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run performance tests
+      run: |
+        cd app/backend
+        python -m pytest test_performance_monitoring.py::TestPerformanceMetrics -v --tb=short
+
+  test-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest fastapi httpx uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run E2E tests
+      run: |
+        cd app/backend
+        python -m pytest test_e2e_ui.py::TestE2EUserWorkflow -v --tb=short
+
+  integration-test:
+    runs-on: ubuntu-latest
+    needs: [test-core, test-security, test-api]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd app/backend
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov pytest-asyncio httpx fastapi uvicorn python-multipart
+        pip install --break-system-packages --user pydantic
+
+    - name: Run complete test suite
+      run: |
+        cd app/backend
+        python run_all_tests.py
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: app/backend/test_report_*.json
+
+  docker-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker image
+      run: |
+        docker build -t capitaine-python:test .
+
+    - name: Run tests in Docker
+      run: |
+        docker run --rm capitaine-python:test python -m pytest app/backend/test_course_manager.py -v
+
+    - name: Test application startup
+      run: |
+        docker run -d --name test-app -p 8080:8080 capitaine-python:test
+        sleep 10
+        curl -f http://localhost:8080/api/health || exit 1
+        docker stop test-app
