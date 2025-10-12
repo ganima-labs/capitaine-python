@@ -3,6 +3,9 @@ Tests pour le module main.py
 Couvre les endpoints API et la logique principale
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import json
 import os
@@ -13,8 +16,8 @@ from fastapi import HTTPException
 from io import StringIO
 
 # Importer l'application
-from .main import app
-from .security import SecurityValidator
+from backend.main import app
+from backend.security import SecurityValidator
 
 client = TestClient(app)
 

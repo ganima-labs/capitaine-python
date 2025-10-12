@@ -3,12 +3,15 @@ Tests unitaires pour le module de configuration (config.py)
 Valide la gestion sécurisée des paramètres de configuration
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import os
 import tempfile
 from unittest.mock import patch, MagicMock
 from pydantic import ValidationError
-from .config import (
+from backend.config import (
     SecurityConfig,
     get_config,
     is_production,

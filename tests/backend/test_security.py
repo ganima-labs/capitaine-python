@@ -3,12 +3,15 @@ Tests de sécurité pour Capitaine Python
 Ces tests valident que les mesures de sécurité fonctionnent correctement
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import asyncio
 from fastapi.testclient import TestClient
-from .main import app
-from .security import SecurityValidator
-from .secure_grader import SecureCodeExecutor
+from backend.main import app
+from backend.security import SecurityValidator
+from backend.secure_grader import SecureCodeExecutor
 
 client = TestClient(app)
 

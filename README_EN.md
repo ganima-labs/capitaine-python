@@ -15,7 +15,7 @@ Capitaine Python is a complete educational system that allows beginners to learn
 - **🧪 Complete tests**: 89% coverage with 379 unit tests
 - **🐳 Containerization**: Docker Compose for simplified deployment
 - **👶 Child mode**: Interface adapted for 8-12 years old with gamification
-- **📊 Advanced monitoring**: Docker health checks with Prometheus/Grafana
+- **⚡ Lightweight architecture**: Backend + Frontend + Code execution only
 
 ## 🚀 Installation and Startup
 
@@ -43,6 +43,7 @@ docker-compose up --build --force-recreate
 3. **Access the application**
 - Web interface: http://localhost:8080
 - API documentation: http://localhost:8080/docs
+- Execution service: http://localhost:2000 (Piston API)
 
 ## 📚 Child Mode (New Feature)
 
@@ -59,25 +60,33 @@ Capitaine Python now has a specialized mode for children aged 8-12:
 - `docs/planning/CHILD_MODE_IMPLEMENTATION_PLAN.md` - 12-week roadmap
 - `docs/security/EXERCISE_PATTERNS_GUIDE.md` - Security/pedagogy patterns
 - `docs/design/UI_DESIGN_PROPOSAL.md` - React/TypeScript design
-- `docs/monitoring/MONITORING_ADMIN.md` - Docker monitoring
 
 ## 🏗️ Architecture
 
-### FastAPI Backend
+### Simplified Tech Stack
+- **Backend**: FastAPI + Python 3.11
+- **Frontend**: HTML5/CSS3/Vanilla JavaScript
+- **Execution**: Piston API (secure sandbox)
+- **Database**: SQLite (persistence via Docker volume)
+- **Containerization**: Docker Compose
+
+### Service Structure
 ```
-app/
-├── backend/
-│   ├── main.py              # FastAPI API with 4 endpoints
-│   ├── exercises.py          # Educational exercises definitions
-│   ├── grader.py            # Secure execution engine
-│   ├── db.py                # SQLite progress management
-│   ├── security.py          # Code validation and security
-│   └── course_manager.py    # JSON course management
-├── frontend/
-│   ├── index.html           # Single page interface
-│   ├── app.js              # Vanilla JavaScript logic
-│   └── style.css            # Responsive styles
-└── docker-compose.yml
+capitaine-python/
+├── docker-compose.yml       # Only 3 services: api, piston, frontend
+├── app/
+│   ├── backend/
+│   │   ├── main.py              # FastAPI API with 4 endpoints
+│   │   ├── exercises.py          # Educational exercises definitions
+│   │   ├── grader.py            # Secure execution engine
+│   │   ├── db.py                # SQLite progress management
+│   │   ├── security.py          # Code validation and security
+│   │   └── course_manager.py    # JSON course management
+│   └── frontend/
+│       ├── index.html           # Single page interface
+│       ├── app.js              # Vanilla JavaScript logic
+│       └── style.css            # Responsive styles
+└── docs/                        # Organized documentation
 ```
 
 ### API Endpoints

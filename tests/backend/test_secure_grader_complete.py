@@ -3,6 +3,9 @@ Tests complets pour le module secure_grader.py
 Couvre tous les aspects de l'exécution sécurisée de code
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import asyncio
 import tempfile
@@ -12,7 +15,7 @@ import resource
 from unittest.mock import Mock, patch, AsyncMock, MagicMock
 from typing import Dict, Any
 
-from .secure_grader import SecureCodeExecutor, secure_executor, quick_syntax_check, build_harness_and_run
+from backend.secure_grader import SecureCodeExecutor, secure_executor, quick_syntax_check, build_harness_and_run
 
 
 class TestSecureCodeExecutorInit:

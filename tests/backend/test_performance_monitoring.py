@@ -3,6 +3,9 @@ Tests de performance et monitoring pour Capitaine Python
 Ces tests valident les performances, les limites et le monitoring du système
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import time
 import threading
@@ -11,8 +14,8 @@ import json
 import psutil
 import os
 from fastapi.testclient import TestClient
-from .main import app
-from .security import SecurityValidator
+from backend.main import app
+from backend.security import SecurityValidator
 
 client = TestClient(app)
 

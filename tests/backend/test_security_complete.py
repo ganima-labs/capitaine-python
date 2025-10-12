@@ -3,6 +3,9 @@ Tests complets pour le module security.py
 Couvre tous les aspects de la validation et sécurité du code
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import re
 import json
@@ -10,7 +13,7 @@ import html
 from unittest.mock import patch, MagicMock
 from typing import Dict, Any
 
-from .security import SecurityValidator
+from backend.security import SecurityValidator
 
 
 class TestSecurityValidatorConstants:

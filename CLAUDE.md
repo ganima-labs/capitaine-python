@@ -8,6 +8,11 @@ Capitaine Python est une plateforme d'apprentissage interactif pour enseigner Py
 
 ## Architecture
 
+### Services Docker (3 services essentiels)
+- **api** : Backend FastAPI avec interface web intégrée (port 8080)
+- **piston** : Service d'exécution de code isolé (port 2000)
+- **progress** : Volume persistant pour la base de données SQLite
+
 ### Backend (`app/backend/`)
 - **main.py** : API FastAPI avec 4 endpoints principaux
   - `GET /api/exercises` : Liste tous les exercices disponibles
@@ -22,16 +27,16 @@ Capitaine Python est une plateforme d'apprentissage interactif pour enseigner Py
 - **index.html** : Interface monopage avec éditeur de code et système d'exercices
 - **app.js** : Logique JavaScript vanilla pour interagir avec l'API
 
-### Infrastructure
-- **Docker** : Containerisation complète avec docker-compose
-- **Piston** : Service d'exécution de code isolé (ghcr.io/engineer-man/piston:3.1.1)
-- **SQLite** : Base de données légère pour la progression
+### Infrastructure Simplifiée
+- **Docker** : Containerisation légère avec 2 services seulement
+- **Piston** : Service d'exécution de code isolé (utkashx/engineer-man-piston:latest)
+- **SQLite** : Base de données légère pour la progression (persistée via volume)
 
 ## Commandes essentielles
 
 ### Développement local
 ```bash
-# Démarrer l'environnement (API avec fallback local pour l'exécution de code)
+# Démarrer l'environnement simplifié (API + Piston)
 docker-compose up --build -d
 
 # Arrêter les services
@@ -42,10 +47,10 @@ docker-compose logs -f api
 
 # Redémarrer après modifications
 docker-compose up --build --force-recreate
-```
 
-### Note importante sur Piston
-Le service Piston original (ghcr.io/engineer-man/piston:3.1.1) n'est plus disponible. Le système utilise maintenant un fallback local qui exécute le code Python directement dans le conteneur. Pour une production sécurisée, il est recommandé de configurer un service Piston alternatif.
+# Nettoyer les anciens services monitoring si nécessaire
+docker-compose down --remove-orphans
+```
 
 ### Structure des exercices
 Les exercices sont définis dans `app/backend/exercises.py` avec la structure :
@@ -76,4 +81,11 @@ Les exercices sont définis dans `app/backend/exercises.py` avec la structure :
 - **Frontend** : HTML5/CSS3/JavaScript vanilla (pas de framework)
 - **Base de données** : SQLite avec persistances via volume Docker
 - **Sécurité** : Exécution de code isolée via Piston API
-- **Déploiement** : Docker Compose avec réseau isolé
+- **Déploiement** : Docker Compose avec architecture légère (2 services)
+
+## Accès aux services
+
+- **Interface web** : http://localhost:8080
+- **Documentation API** : http://localhost:8080/docs
+- **Service Piston** : http://localhost:2000
+- **Base de données** : `docker-compose exec api sqlite3 /data/progress.db`

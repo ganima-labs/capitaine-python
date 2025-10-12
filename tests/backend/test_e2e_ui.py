@@ -3,13 +3,16 @@ Tests End-to-End (E2E) pour l'interface utilisateur de Capitaine Python
 Ces tests valident le workflow complet de l'utilisateur depuis le navigateur
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import pytest
 import asyncio
 import json
 import time
 from fastapi.testclient import TestClient
-from .main import app
-from .course_manager import course_manager
+from backend.main import app
+from backend.course_manager import course_manager
 
 client = TestClient(app)
 
