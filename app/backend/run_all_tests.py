@@ -23,7 +23,7 @@ def run_command(cmd, description, cwd=None):
         result = subprocess.run(
             cmd,
             shell=True,
-            cwd=cwd or os.path.dirname(__file__),
+            cwd=cwd or "/srv",
             capture_output=True,
             text=True
         )
@@ -58,9 +58,9 @@ def main():
 
     # 1. Tests unitaires (rapides)
     success, duration, stdout, stderr = run_command(
-        "python -m pytest test_course_manager.py test_db.py test_exercises.py -v --tb=short",
+        "cd /srv && python -m pytest tests/backend/test_course_manager.py tests/backend/test_db.py tests/backend/test_exercises.py -v --tb=short",
         "Tests Unitaires Core",
-        "app/backend"
+        "/srv"
     )
     results['unit_tests'] = {
         'success': success,
@@ -71,9 +71,9 @@ def main():
 
     # 2. Tests de sécurité
     success, duration, stdout, stderr = run_command(
-        "python -m pytest test_security.py -v --tb=short",
+        "cd /srv && python -m pytest tests/backend/test_security.py -v --tb=short",
         "Tests de Sécurité",
-        "app/backend"
+        "/srv"
     )
     results['security_tests'] = {
         'success': success,
@@ -84,9 +84,9 @@ def main():
 
     # 3. Tests API
     success, duration, stdout, stderr = run_command(
-        "python -m pytest test_main.py -v --tb=short",
+        "cd /srv && python -m pytest tests/backend/test_main.py -v --tb=short",
         "Tests API",
-        "app/backend"
+        "/srv"
     )
     results['api_tests'] = {
         'success': success,
@@ -97,9 +97,9 @@ def main():
 
     # 4. Tests de performance (rapides)
     success, duration, stdout, stderr = run_command(
-        "python -m pytest test_performance_monitoring.py::TestPerformanceMetrics -v --tb=short",
+        "cd /srv && python -m pytest tests/backend/test_performance_monitoring.py::TestPerformanceMetrics -v --tb=short",
         "Tests de Performance",
-        "app/backend"
+        "/srv"
     )
     results['performance_tests'] = {
         'success': success,
@@ -110,9 +110,9 @@ def main():
 
     # 5. Tests E2E (rapides)
     success, duration, stdout, stderr = run_command(
-        "python -m pytest test_e2e_ui.py::TestE2EUserWorkflow::test_complete_learning_workflow -v --tb=short",
+        "cd /srv && python -m pytest tests/backend/test_e2e_ui.py::TestE2EUserWorkflow::test_complete_learning_workflow -v --tb=short",
         "Tests E2E Workflow",
-        "app/backend"
+        "/srv"
     )
     results['e2e_tests'] = {
         'success': success,
@@ -123,9 +123,9 @@ def main():
 
     # 6. Tests de couverture (si disponible)
     success, duration, stdout, stderr = run_command(
-        "python -m pytest --cov=. --cov-report=term-missing --cov-report=html:htmlcov --cov-fail-under=80 test_course_manager.py",
+        "cd /srv && python -m pytest --cov=/srv --cov-report=term-missing --cov-report=html:/srv/htmlcov --cov-fail-under=80 tests/backend/test_course_manager.py",
         "Tests de Couverture (seuil: 80%)",
-        "app/backend"
+        "/srv"
     )
     results['coverage_tests'] = {
         'success': success,
@@ -186,6 +186,7 @@ def main():
             total_errors += stats['errors']
 
     overall_total = total_passed + total_failed + total_errors
+    success_rate = 0
     if overall_total > 0:
         success_rate = (total_passed / overall_total) * 100
         print(f"\n🎯 Taux de réussite global: {success_rate:.1f}% ({total_passed}/{overall_total})")

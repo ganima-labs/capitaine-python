@@ -7,6 +7,7 @@ import sys
 def make_runner_payload(code: str, stdin: str = ""):
     return {
         "language": "python",
+        "version": "3.11.4",  # Version spécifique requise par Piston
         "files": [{"name": "main.py", "content": code}],
         "stdin": stdin,
         "args": [],
@@ -60,6 +61,13 @@ async def run_local_python(code: str, stdin: str = "", timeout: int = 10):
         }
 
 async def quick_syntax_check(exec_url: str, code: str):
+    # Vérifier si nous devons utiliser directement le fallback local
+    if os.getenv("USE_SECURE_EXECUTOR", "true").lower() == "false":
+        print("Utilisation du fallback local (USE_SECURE_EXECUTOR=false)")
+        out = await run_local_python(code)
+        ok = not out.get("stderr")
+        return ok, out
+
     try:
         async with httpx.AsyncClient(timeout=10) as c:
             r = await c.post(exec_url, json=make_runner_payload(code))
@@ -106,6 +114,13 @@ async def build_harness_and_run(exec_url: str, student_code: str, tests: list[st
         "print(\"__ALL_TESTS_OK__\")",
     ]
     harness = "\n".join(harness_lines)
+
+    # Vérifier si nous devons utiliser directement le fallback local
+    if os.getenv("USE_SECURE_EXECUTOR", "true").lower() == "false":
+        print("Utilisation du fallback local pour build_harness_and_run (USE_SECURE_EXECUTOR=false)")
+        out = await run_local_python(harness)
+        stdout = out.get("stdout", "")
+        return {"ok": "__ALL_TESTS_OK__" in stdout, "raw": out}
 
     try:
         async with httpx.AsyncClient(timeout=15) as c:

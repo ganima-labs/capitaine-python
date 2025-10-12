@@ -9,8 +9,10 @@ import json
 import os
 from pathlib import Path
 from unittest.mock import patch, MagicMock
-from . import course_manager
-from .course_manager import CourseManager
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+from backend.course_manager import CourseManager
 
 
 class TestCourseManagerInit:
@@ -980,12 +982,12 @@ class TestGlobalCourseManager:
 
     def test_global_instance_exists(self):
         """Test que l'instance globale existe"""
-        from .course_manager import course_manager
+        from backend.course_manager import course_manager
         assert course_manager is not None
         assert isinstance(course_manager, CourseManager)
 
     def test_global_instance_loaded(self):
         """Test que l'instance globale est chargée"""
-        from .course_manager import course_manager
+        from backend.course_manager import course_manager
         # L'instance doit avoir tenté de charger les cours du répertoire par défaut
         assert isinstance(course_manager.courses, dict)
