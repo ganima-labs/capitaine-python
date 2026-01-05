@@ -10,7 +10,7 @@ services:
       # Configuration sécurisée
       - ENVIRONMENT=development
       - EXECUTOR_URL=http://piston:2000/api/v2/execute
-      - USE_SECURE_EXECUTOR=false
+      - USE_SECURE_EXECUTOR=true
       - MAX_CODE_LENGTH=5000
       - MAX_EXECUTION_TIME=10
       - MAX_MEMORY_USAGE=134217728

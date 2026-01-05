@@ -6,11 +6,11 @@ from typing import Dict, Any, List
 class SecurityValidator:
     """Classe de validation et sanitization pour la sécurité du code"""
 
-    # Modules Python dangereux à bloquer
+    # Modules Python dangereux à bloquer (toujours)
     DANGEROUS_MODULES = {
         'os', 'sys', 'subprocess', 'importlib', 'imp', 'compile',
         'eval', 'exec', 'execfile', '__import__', 'open', 'file',
-        'input', 'raw_input', 'reload', 'vars', 'globals', 'locals',
+        'reload', 'vars', 'globals', 'locals',
         'dir', 'hasattr', 'getattr', 'setattr', 'delattr',
         'exit', 'quit', 'help', 'copyright', 'credits', 'license',
         'shutil', 'tempfile', 'threading', 'multiprocessing',
@@ -19,14 +19,19 @@ class SecurityValidator:
         'platform', 'sysconfig', 'distutils', 'pkgutil'
     }
 
-    # Fonctions dangereuses à bloquer
+    # Fonctions dangereuses à bloquer (toujours)
     DANGEROUS_FUNCTIONS = {
         'eval', 'exec', 'compile', '__import__', 'reload',
-        'open', 'file', 'input', 'raw_input', 'exit', 'quit',
+        'open', 'file', 'exit', 'quit',
         'help', 'copyright', 'credits', 'license'
     }
 
-    # Patterns d'injection dangereux
+    # Modules/fonctions conditionnellement autorisés (seulement si allow_input=True)
+    CONDITIONAL_MODULES = {
+        'input', 'raw_input'
+    }
+
+    # Patterns d'injection dangereux (toujours bloqués)
     DANGEROUS_PATTERNS = [
         r'__import__\s*\(',
         r'eval\s*\(',
@@ -39,13 +44,15 @@ class SecurityValidator:
         r'sys\.',
         r'import\s+',
         r'from\s+.*\s+import',
-        r'class\s+\w+\s*\(',
-        r'def\s+\w+\s*\([^)]*\)\s*:',
-        r'lambda\s+',
-        r'@\w+',  # Decorators
+        r'@\w+',  # Decorators (peuvent être utilisés pour contourner sécurité)
         r'global\s+',
         r'nonlocal\s+',
     ]
+
+    # Patterns légitimes pour l'apprentissage (non bloqués)
+    # - def function_name(): pour définir des fonctions
+    # - lambda: pour les fonctions anonymes
+    # - class ClassName: pour les classes (POO avancée)
 
     # Limites pour la sécurité
     MAX_CODE_LENGTH = 5000  # caractères
@@ -131,23 +138,24 @@ class SecurityValidator:
         warnings = []
 
         # Détecter si le code utilise input()
-        has_input = re.search(rf'\b{"input"}\s*\(', code)
+        has_input = re.search(r'\binput\s*\(', code)
 
-        # Vérifier les modules dangereux
+        # Vérifier les modules dangereux (toujours bloqués)
         for module in cls.DANGEROUS_MODULES:
-            # Skip input check if allowed and this is the input module/function
-            if allow_input and module in ['input', 'raw_input'] and has_input:
-                continue
             if re.search(rf'\b{re.escape(module)}\b', code):
                 issues.append(f"Dangerous module detected: {module}")
 
-        # Vérifier les fonctions dangereuses
+        # Vérifier les fonctions dangereuses (toujours bloquées)
         for func in cls.DANGEROUS_FUNCTIONS:
-            # Skip input check if allowed and this is the input function
-            if allow_input and func in ['input', 'raw_input'] and has_input:
-                continue
             if re.search(rf'\b{re.escape(func)}\s*\(', code):
                 issues.append(f"Dangerous function detected: {func}")
+
+        # Vérifier les modules conditionnels (input, raw_input)
+        # Seulement bloqués si allow_input=False
+        if not allow_input:
+            for module in cls.CONDITIONAL_MODULES:
+                if re.search(rf'\b{re.escape(module)}\s*\(', code):
+                    issues.append(f"Input function detected but not allowed in this context: {module}")
 
         # Vérifier les patterns dangereux
         for pattern in cls.DANGEROUS_PATTERNS:
@@ -168,8 +176,6 @@ class SecurityValidator:
         # Avertissement spécial pour les exercices avec input
         if has_input and allow_input:
             warnings.append("This code contains input() - interactive execution required")
-        elif has_input and not allow_input:
-            issues.append("input() function detected but not allowed in this context")
 
         return {
             'safe': len(issues) == 0,

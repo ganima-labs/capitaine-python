@@ -1621,9 +1621,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Variable globale pour empêcher les initialisations multiples
+let isAppInitialized = false;
+
 // Initialisation de l'application simplifiée
 async function initApp() {
-  console.log("🚀 Initialisation simplifiée...");
+  // Garde pour éviter les initialisations multiples
+  if (isAppInitialized) {
+    console.log("⏭️ Application déjà initialisée, ignorer...");
+    return;
+  }
+
+  isAppInitialized = true;
+  console.log("🚀 Initialisation de l'application...");
 
   // Charger les cours directement sans i18n
   try {
@@ -1635,21 +1645,10 @@ async function initApp() {
   }
 }
 
-// Initialisation immédiate avec backup
-console.log("🚀 Script chargé, initialisation...");
-
-// Essayer de charger les cours immédiatement
-initApp();
-
-// Essayer aussi quand le DOM est prêt (backup)
+// Initialisation UNIQUE au chargement du DOM
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("📄 DOM chargé, deuxième tentative d'initialisation...");
+  console.log("📄 DOM chargé, démarrage de l'application...");
   initApp();
-});
-
-window.addEventListener('load', function() {
-  console.log("🖼️ Page entièrement chargée, troisième tentative...");
-  setTimeout(initApp, 100);
 });
 
 // Gestionnaire d'événements pour le toggle de la leçon
