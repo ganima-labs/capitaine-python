@@ -587,7 +587,7 @@ def get_exercise(course_id: str, exercise_id: str):
 
 # --- API legacy pour compatibilité ---
 @app.get("/api/exercises")
-def list_exercises():
+def list_exercises_legacy():
     """API legacy - retourne les exercices du premier cours disponible"""
     courses = course_manager.get_course_list()
     if not courses:
@@ -595,7 +595,7 @@ def list_exercises():
     return course_manager.get_course_exercises(courses[0]["id"])
 
 @app.get("/api/exercises/{eid}")
-def get_exercise(eid: str):
+def get_exercise_legacy(eid: str):
     """API legacy - cherche l'exercice dans tous les cours"""
     courses = course_manager.get_course_list()
     for course in courses:
