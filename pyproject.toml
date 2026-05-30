@@ -26,6 +26,7 @@ test = [
     "aiofiles>=23.2.0",
     "psutil>=5.9.0",
     "python-multipart>=0.0.6",
+    "pydantic-settings>=2.0",
 ]
 
 [tool.pytest.ini_options]
