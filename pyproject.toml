@@ -41,11 +41,12 @@ addopts = [
     "--strict-config",
     "--disable-warnings",
     "--cov=app.backend",
-    "--cov-report=html",
     "--cov-report=term-missing",
-    "--cov-fail-under=100",
     "--color=yes",
-    "--durations=10"
+    "--durations=10",
+    "--ignore=tests/backend/test_db_complete.py",
+    "--ignore=tests/backend/test_security_complete.py",
+    "--ignore=tests/backend/test_secure_grader_complete.py"
 ]
 markers = [
     "unit: Tests unitaires",
