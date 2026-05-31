@@ -20,8 +20,10 @@ class TestCourseManagerInit:
 
     def test_init_default_directory(self):
         """Test initialisation avec répertoire par défaut"""
+        import backend.course_manager as cm_mod
         manager = CourseManager()
-        expected_path = os.path.join(os.path.dirname(__file__), "courses")
+        # Default dir is computed relative to course_manager.py, not this test file.
+        expected_path = os.path.join(os.path.dirname(cm_mod.__file__), "courses")
         assert manager.courses_dir == expected_path
         assert isinstance(manager.courses, dict)
         assert manager.current_course_id is None
