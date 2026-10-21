@@ -10,9 +10,7 @@ concurrency:
 
 jobs:
   test:
-    # Runners self-hosted de l'org : les runners heberges GitHub ne demarrent
-    # plus (quota de minutes de l'org epuise + spending limit bloque).
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
